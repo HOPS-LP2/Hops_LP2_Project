@@ -8,6 +8,7 @@
 
 body {
     margin: 0;
+    min-height: 100vh;
 }
 
 header {
@@ -20,14 +21,25 @@ header {
 
 .quick-acess {
     display: flex;
+    align-items: center;
 }
 
 .quick-acess p {
     font-size: 20px;
 }
 
+.login{
+    display: flex;
+    align-items: center;
+}
+
 .login p {
     font-size: 20px;
+}
+
+.representation-img{
+    height: 32px;
+    width: 32px;
 }
 
 h1 {
@@ -35,22 +47,24 @@ h1 {
     margin: 0;
 }
 
-section {
+.search {
     display: flex;
     flex-direction: column;
     background-color: var(--color);
     margin: 10vh auto;
     width: 50vw;
-    height: 28vh;
+    height: 20vh;
     border-radius: 20px;
     padding-left: 2vw;
-    padding-top: 2vh;
     color: white;
 }
 
 .div-special {
+    margin-top: 3vh;
+    padding-right: 2vw;
     display: flex;
     align-items: end;
+    justify-content: space-between;
 }
 
 .div-special div {
@@ -58,16 +72,60 @@ section {
     flex-direction: column;
 }
 
-.search-submit {
-    background-color: #D99bd3;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
 input {
     border: 0;
-    margin-top: 3vh;
-    height: 4vh;
+    height: 5vh;
+    font-size: 18px;
     border-radius: 5px;
+    padding-left: 1vw;
+}
+
+input[type="date"], input[type="time"]{
+    padding: 0;
+    text-align: center;
+}
+
+.btn-search {
+    background-color: #D99bd3;
+    font-size: 16px;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.btn-img{
+    margin-left: 1vh;
+    height: 24px;
+    width: 24px;
+}
+
+.touch-slider{
+    display: flex;
+    grid-gap: 3rem;
+    margin: 0 0 10vh 20vw;
+    max-width: 75vw;
+    width: 100%;
+    align-items: center;
+    overflow-x: auto;
+    scroll-snap-type: x;
+    cursor: grab;
+    scroll-behavior: smooth;
+}
+
+.touch-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slide{
+    background-color: #F6F6F6;
+    height: 30vh;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    border-radius: 20px;
 }
