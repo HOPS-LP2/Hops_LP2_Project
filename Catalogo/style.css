@@ -1,0 +1,134 @@
+:root {
+    --color: #a14198;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+body>header {
+    border-bottom: 5px solid var(--color);
+    display: flex;
+    width: 100vw;
+    height: 6vh;
+    align-items: center;
+    box-shadow: 1px 0px 15px 1px rgba(0, 0, 0, 0.6);
+}
+
+.quick-acess {
+    display: flex;
+    align-items: center;
+}
+
+.quick-acess p {
+    font-size: 20px;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+
+.login p {
+    font-size: 20px;
+}
+
+.representation-img {
+    height: 32px;
+    width: 32px;
+}
+
+main>header {
+    display: flex;
+    align-items: center;
+    margin: 4vh 0 0 5vw;
+}
+
+.search {
+    display: flex;
+}
+
+.search-input {
+    background-color: #D99bd3;
+    font-size: 16px;
+    height: 3vh;
+    border: none;
+    padding: 8px 18px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-left: 40vw;
+}
+
+.search-btn {
+    background-color: #D99bd3;
+    height: 4.5vh;
+    border: none;
+    padding: 8px 18px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.search-img {
+    height: 24px;
+    width: 24px;
+}
+
+.search-select {
+    margin-left: 2vw;
+    background-color: #D99bd3;
+    border: none;
+    font-size: 16px;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.search-select:focus {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.product {
+    background-color: #F6F6F6;
+    height: 30vh;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.catalog {
+    margin-top: 5vh;
+    display: flex;
+}
+
+.filter {
+    height: 100vh;
+    width: 20vw;
+    background-color: #F6F6F6;
+    margin: 0 5vw 10vh 5vw;
+    border-radius: 20px;
+}
+
+.cars {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(4, 15vw);
+}
+
+div.product~h1 {
+    margin: 2vh 0 2vh 0;
+}
+
+div.product>img{
+    height: 150px;
+    width: 250px;
+}
