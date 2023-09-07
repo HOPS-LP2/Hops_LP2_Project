@@ -17,6 +17,7 @@ header {
     width: 100vw;
     height: 6vh;
     align-items: center;
+    box-shadow: 1px 0px 15px 1px rgba(0, 0, 0, 0.6);
 }
 
 .quick-acess {
@@ -94,6 +95,7 @@ input[type="date"], input[type="time"]{
     font-weight: 600;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn-img{
@@ -115,8 +117,16 @@ input[type="date"], input[type="time"]{
     scroll-behavior: smooth;
 }
 
+.touch-slider, .touch-slider *{
+    user-select: none;
+   -moz-user-select: none;
+   -webkit-user-drag: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+}
+
 .touch-slider::-webkit-scrollbar {
-    display: none;
+    display: none; /*Esse comando diz se a barra de movimentação do slide deve aparecer, eu creio que não deva. Ass: zuerinha*/
 }
 
 .slide{
@@ -126,6 +136,5 @@ input[type="date"], input[type="time"]{
     display: flex;
     justify-content: center;
     align-items: center;
-    user-select: none;
     border-radius: 20px;
 }

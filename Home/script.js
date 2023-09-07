@@ -1,3 +1,5 @@
+//Esse script faz o touch-slider funcionar, favor não mexer sem autorização.
+
 var DA = document.querySelectorAll('input[type=date]');
 for (let d of DA)
     d.type='';
