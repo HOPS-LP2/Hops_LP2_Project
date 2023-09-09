@@ -95,7 +95,16 @@ main {
 
 .input-div {
     display: flex;
+    align-self: center;
     margin-top: 2vh;
+    position: relative;
+}
+
+.input-div>img {
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    width: 9%;
 }
 
 .input-btn-icon {
@@ -123,12 +132,10 @@ main {
 input {
     margin: 0 auto 0 0;
     border: 1px solid grey;
-    border-left: none;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
     width: 15vw;
     height: 5vh;
-    padding-left: 0.5vw;
+    padding-left: 2.5vw;
     font-size: 15px;
 }
 
@@ -163,6 +170,7 @@ a {
 }
 
 a>span {
+    font-size: 12px;
     cursor: pointer;
 }
 
@@ -177,12 +185,25 @@ a>span {
     color: var(--color);
     background-color: white;
     border: 1px solid var(--color);
+    transition: all 0.2s;
+}
+
+.btn-signup:hover {
+    background-color: var(--color);
+    color: white;
 }
 
 .btn-login {
     color: white;
     background-color: var(--color);
     border: none;
+    transition: all 0.2s;
+}
+
+.btn-login:hover {
+    border: 1px solid var(--color);
+    background-color: white;
+    color: var(--color);
 }
 
 .btn-signup,
@@ -191,7 +212,6 @@ a>span {
     width: 5vw;
     font-weight: 600;
     border-radius: 5px;
-    padding: 10px 20px;
     scale: 1.3;
 }
 
