@@ -31,7 +31,7 @@ body>header {
 }
 
 .quick-access p {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .login-access {
@@ -94,10 +94,10 @@ main {
 }
 
 .input-div {
+    position: relative;
     display: flex;
     align-self: center;
     margin-top: 2vh;
-    position: relative;
 }
 
 .input-div>img {
@@ -105,28 +105,6 @@ main {
     top: 9px;
     left: 8px;
     width: 9%;
-}
-
-.input-btn-icon {
-    margin: 0 0 0 auto;
-    width: 2.5vw;
-    height: 5.4vh;
-    border: 1px solid grey;
-    border-right: none;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    background-color: white;
-    cursor: default;
-}
-
-.input-btn-icon:hover {
-    border: 1px solid grey;
-}
-
-.input-btn-icon img {
-    vertical-align: middle;
-    height: 24px;
-    width: auto;
 }
 
 input {
@@ -145,20 +123,9 @@ input:focus {
 
 .show-password {
     position: absolute;
-    top: 43.3%;
-    right: 22%;
-    transform: translateY(-50%);
+    margin-left: 85%;
     cursor: pointer;
-    width: 4rem;
-    display: flex;
-    align-items: center;
-    background: none;
-    border: none;
-}
-
-.show-password img {
-    width: 50%;
-    height: auto;
+    transition: all .2s;
 }
 
 a {
