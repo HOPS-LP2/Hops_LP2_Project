@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../styles/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,36 +17,39 @@
         <div>
             <h1 style="margin-left: 3vw; font-size: 25px;">HOPS</h1>
         </div>
-        <div class="quick-acess">
-            <img src="/img/icons/quick_acess_icon/home_img.png" style="margin-left: 8vw;" class="representation-img" />
+        <div class="quick-access">
+            <img src="../public/icons/home-img.png" style="margin-left: 8vw;" class="representation-img" />
             <p style="margin-left: 1vw;">Home</p>
             <div class="line"></div>
-            <img src="/img/icons/quick_acess_icon/car_img.png" style="margin-left: 2vw;" class="representation-img">
+            <img src="../public/icons/car-img.png" style="margin-left: 2vw;" class="representation-img">
             <p style="margin-left: 1vw;">Cars</p>
             <div class="line"></div>
-            <img src="/img/icons/quick_acess_icon/agencies_img.png" style="margin-left: 2vw;" class="representation-img">
+            <img src="../public/icons/agencies-img.png" style="margin-left: 2vw;" class="representation-img">
             <p style="margin-left: 1vw;">Agencies</p>
         </div>
-        <div class="login-acess">
-            <img src="/img/icons/quick_acess_icon/user_img.png" style="margin-left: 48vw;" class="representation-img" />
+
+        <div class="login-access">
+            <img src="../public/icons/user-img.png" style="margin-left: 48vw;" class="representation-img" />
             <p style="margin-left: 1vw;">Login</p>
         </div>
     </header>
+
     <main>
         <div class="login-image">
             <h3>Colocar alguma coisa aqui dentro</h3>
         </div>
-        <div class="login-color">
+        <form action="login" method="post" class="login-color">
             <div class="login">
                 <h1 style="text-align: center;">Login</h1>
                 <div class="input-div">
-                    <button type="button" class="input-btn-icon"><img src="./img/icons/email-icon.png"/></button>
+                    <button type="button" class="input-btn-icon"><img src="../public/icons/email-icon.png" /></button>
                     <input type="email" name="email" id="email" placeholder="Email" />
                 </div>
                 <div class="input-div" style="margin-top: 2vh;">
-                    <button type="button" class="input-btn-icon"><img src="./img/icons/password-icon.png"/></button>
-                    <input type="password" name="password" id="password" placeholder="Password"/>
-                    <button type="button" class="show-password"><img src="./img/icons/eye_open.png"/></button>
+                    <button type="button" class="input-btn-icon"><img
+                            src="../public/icons/password-icon.png" /></button>
+                    <input type="password" name="password" id="password" placeholder="Password" />
+                    <button type="button" class="show-password"><img src="../public/icons/eye-open.png" /></button>
                 </div>
                 <a href=""><span>Forgot your password?</span></a>
                 <div class="login-btns">
@@ -54,9 +57,9 @@
                     <button type="submit" class="btn-login">Login</button>
                 </div>
             </div>
-        </div>
+        </form>
     </main>
-    <script src="./script.js"></script>
+    <script src="../scripts/login.js"></script>
 </body>
 
 </html>

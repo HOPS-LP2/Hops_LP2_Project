@@ -5,5 +5,5 @@ const password_input = document.querySelector('#password');
 show_password.addEventListener('click', () => {
     password_input.type = password_input.type === 'password' ? 'text' : 'password'
 
-    show_password_img.src = show_password_img.src.includes('open') ? './img/icons/eye_close.png' : './img/icons/eye_open.png'
+    show_password_img.src = show_password_img.src.includes('open') ? '../public/icons/eye-close.png' : '../public/icons/eye-open.png'
 })

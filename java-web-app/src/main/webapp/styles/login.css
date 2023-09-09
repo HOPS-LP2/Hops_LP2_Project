@@ -9,34 +9,39 @@
 body {
     margin: 0;
     min-height: 100vh;
+    min-width: 100vw;
     background-color: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 body>header {
     border-bottom: 5px solid var(--color);
     display: flex;
     width: 100vw;
-    height: 6vh;
+    height: 7vh;
     align-items: center;
-    box-shadow: 1px 0px 15px 1px rgba(0, 0, 0, 0.6);
+    box-shadow: 1px 0px 15px 1px rgba(0, 0, 0, 0.321);
 }
 
-.quick-acess {
+.quick-access {
     display: flex;
     align-items: center;
 }
 
-.quick-acess p {
-    font-size: 20px;
+.quick-access p {
+    font-size: 18px;
 }
 
-.login-acess {
+.login-access {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
-.login-acess p {
-    font-size: 20px;
+.login-access p {
+    font-size: 18px;
 }
 
 .representation-img {
@@ -52,7 +57,7 @@ body>header {
 }
 
 main {
-    margin: 10vh auto;
+    margin: 20vh auto;
     height: 50vh;
     width: 60vw;
     display: flex;
@@ -88,12 +93,12 @@ main {
     flex-direction: column;
 }
 
-.input-div{
+.input-div {
     display: flex;
     margin-top: 2vh;
 }
 
-.input-btn-icon{
+.input-btn-icon {
     margin: 0 0 0 auto;
     width: 2.5vw;
     height: 5.4vh;
@@ -105,11 +110,11 @@ main {
     cursor: default;
 }
 
-.input-btn-icon:hover{
+.input-btn-icon:hover {
     border: 1px solid grey;
 }
 
-.input-btn-icon img{
+.input-btn-icon img {
     vertical-align: middle;
     height: 24px;
     width: auto;
@@ -127,11 +132,11 @@ input {
     font-size: 15px;
 }
 
-input:focus{
+input:focus {
     outline: none;
 }
 
-.show-password{
+.show-password {
     position: absolute;
     top: 43.3%;
     right: 22%;
@@ -144,7 +149,7 @@ input:focus{
     border: none;
 }
 
-.show-password img{
+.show-password img {
     width: 50%;
     height: auto;
 }
@@ -157,7 +162,7 @@ a {
     cursor: default;
 }
 
-a>span:hover {
+a>span {
     cursor: pointer;
 }
 
