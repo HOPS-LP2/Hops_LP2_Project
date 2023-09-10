@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="../styles/signup.css">
   <link rel="stylesheet" href="../styles/general.css">
+  <link rel="stylesheet" href="../styles/signup.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -37,27 +38,64 @@
 
   <main>
     <div class="signup">
-      <h2>Login</h2>
+      <h2>Sign Up</h2>
 
-      <form action="/signup" method="post" class="signup-form">
+      <form action="/signup" method="post" id="signup-form">
         <div class="input-field small">
-          <label for="first-name">First name</label>
-          <input type="text">
+          <label for="first-name">First name:</label>
+          <input type="text" name="first-name" id="first-name">
         </div>
 
         <div class="input-field small">
-          <label for="last-name">Last name</label>
-          <input type="text">
+          <label for="last-name">Last name:</label>
+          <input type="text" name="last-name" id="last-name">
+        </div>
+
+        <div class="input-field large">
+          <label for="email">Email:</label>
+          <input type="text" name="email" id="email">
+        </div>
+
+        <div class="input-field large">
+          <label for="ssn">Social Security Number (SSN):</label>
+          <input type="text" name="ssn" id="ssn">
+        </div>
+
+        <div class="input-field large">
+          <label for="phone-number">Phone Number:</label>
+          <input type="tel" name="phone-number" id="phone-number" />
+        </div>
+
+        <div class="input-field small">
+          <label for="password">Create password:</label>
+          <input type="password" name="password" id="password">
+
+          <div class="password-req">
+            <p>Password must contain:<br>
+              at least 8 characters; <br>
+              at least one number; <br>
+              at least one lowercase letter; <br>
+              at least one uppercase letter;
+            </p>
+          </div>
+        </div>
+
+        <div class="input-field small">
+          <label for="confirm-password">Confirm password:</label>
+          <input type="password" name="confirm-password" id="confirm-password">
         </div>
 
       </form>
+
+      <p id="warning"></p>
+      <button type="submit" class="large" form="signup-form">Confirm</button>
 
     </div>
 
   </main>
 
 
-  <script src="../scripts/login.js"></script>
+  <script src="../scripts/signup.js"></script>
 </body>
 
 </html>
