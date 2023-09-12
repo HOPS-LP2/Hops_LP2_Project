@@ -1,15 +1,3 @@
-.representation-img {
-    height: 32px;
-    width: 32px;
-}
-
-.line {
-    margin-left: 2vw;
-    width: 0.001px;
-    height: 3vh;
-    border: 1px solid grey;
-}
-
 main {
     margin: 20vh auto;
     height: 50vh;
@@ -17,6 +5,11 @@ main {
     display: flex;
     border-radius: 20px;
     /*box-shadow: 1px 0 0 5px rgba(0, 0, 0, 0.8);*/
+}
+
+.representation-img {
+    height: 32px;
+    width: 32px;
 }
 
 .login-image {

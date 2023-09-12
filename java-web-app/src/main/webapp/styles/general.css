@@ -43,3 +43,10 @@ body>header {
 .login-access p {
   font-size: 18px;
 }
+
+.line {
+  margin-left: 2vw;
+  width: 0.001px;
+  height: 3vh;
+  border: 1px solid grey;
+}

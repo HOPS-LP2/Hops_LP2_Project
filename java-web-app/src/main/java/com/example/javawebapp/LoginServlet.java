@@ -18,8 +18,10 @@ public class LoginServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
-        if (email == user1.getEmail() && password == user1.getPassword()) {
-            resp.sendRedirect("/home.html");
+        if (email.equals(user1.getEmail()) && password.equals(user1.getPassword())) {
+            String contextPath = req.getContextPath();
+
+            resp.sendRedirect(contextPath + "/pages/home.html");
         }
 
     }
