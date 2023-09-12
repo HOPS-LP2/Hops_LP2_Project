@@ -2,7 +2,7 @@
 
 var DA = document.querySelectorAll('input[type=date]');
 for (let d of DA)
-    d.type='';
+    d.type = '';
 
 const wrapper = document.querySelector(".touch-slider");
 
@@ -26,7 +26,7 @@ window.addEventListener('mouseup', function (e) {
 });
 
 wrapper.addEventListener('mousemove', function (e) {
-    if(!pressed){
+    if (!pressed) {
         return
     }
     this.scrollLeft += startX - e.clientX;

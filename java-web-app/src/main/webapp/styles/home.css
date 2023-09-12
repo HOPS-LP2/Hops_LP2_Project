@@ -11,47 +11,12 @@ body {
     min-height: 100vh;
 }
 
-header {
-    border-bottom: 5px solid var(--color);
-    display: flex;
-    width: 100vw;
-    height: 6vh;
-    align-items: center;
-    box-shadow: 1px 0px 15px 1px rgba(0, 0, 0, 0.6);
-}
-
-.quick-acess {
-    display: flex;
-    align-items: center;
-}
-
-.quick-acess p {
-    font-size: 20px;
-}
-
-.login{
-    display: flex;
-    align-items: center;
-}
-
-.login p {
-    font-size: 20px;
-}
-
-.representation-img{
-    height: 32px;
-    width: 32px;
-}
-
-.line{
-    margin-left: 2vw;
-    width: 0.001px;
-    height: 3vh;
-    border: 1px solid grey;
+main {
+    margin-top: 4vh;
 }
 
 h1 {
-    font-size: 25px;
+    font-size: 20px;
     margin: 0;
 }
 
@@ -60,15 +25,17 @@ h1 {
     flex-direction: column;
     background-color: var(--color);
     margin: 10vh auto;
-    width: 50vw;
-    height: 20vh;
+    width: 45vw;
+    height: 24vh;
     border-radius: 20px;
     padding-left: 2vw;
     color: white;
+    position: relative;
 }
 
 .div-special {
-    margin-top: 3vh;
+    position: absolute;
+    bottom: 4vh;
     padding-right: 2vw;
     display: flex;
     align-items: end;
@@ -88,7 +55,8 @@ input {
     padding-left: 1vw;
 }
 
-input[type="date"], input[type="time"]{
+input[type="date"],
+input[type="time"] {
     padding: 0;
     text-align: center;
 }
@@ -105,13 +73,13 @@ input[type="date"], input[type="time"]{
     cursor: pointer;
 }
 
-.btn-img{
+.btn-img {
     margin-left: 1vh;
     height: 24px;
     width: 24px;
 }
 
-.touch-slider{
+.touch-slider {
     display: flex;
     grid-gap: 3rem;
     margin: 0 0 10vh 20vw;
@@ -124,24 +92,32 @@ input[type="date"], input[type="time"]{
     scroll-behavior: smooth;
 }
 
-.touch-slider, .touch-slider *{
+.touch-slider,
+.touch-slider * {
     user-select: none;
-   -moz-user-select: none;
-   -webkit-user-drag: none;
-   -webkit-user-select: none;
-   -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .touch-slider::-webkit-scrollbar {
-    display: none; /*Esse comando diz se a barra de movimentação do slide deve aparecer, eu creio que não deva. Ass: zuerinha*/
+    display: none;
+    /*Esse comando diz se a barra de movimentação do slide deve aparecer, eu creio que não deva. Ass: zuerinha*/
 }
 
-.slide{
-    background-color: #F6F6F6;
-    height: 30vh;
-    aspect-ratio: 1 / 1;
+.slide {
+    background-color: #e8e8e8;
+    width: 14vw;
+    height: 24vh;
+    padding: 0 1vw;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+}
+
+img {
+    width: 100%;
+    text-align: center;
 }

@@ -1,5 +1,5 @@
 main {
-    margin: 20vh auto;
+    margin: 26vh auto;
     height: 50vh;
     width: 60vw;
     display: flex;
@@ -75,7 +75,7 @@ input:focus {
     transition: all .2s;
 }
 
-a {
+.login>a {
     text-align: right;
     margin: 1vh 3vw 0 0;
     text-decoration-line: none;
