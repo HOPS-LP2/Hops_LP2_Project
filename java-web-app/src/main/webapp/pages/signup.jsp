@@ -41,7 +41,7 @@
     <div class="signup">
       <h2>Sign Up</h2>
 
-      <form action="/signup" method="post" id="signup-form">
+      <form action="../signup" method="post" id="signup-form">
         <div class="input-field small">
           <label for="first-name">First name:</label>
           <input type="text" name="first-name" id="first-name">
@@ -79,12 +79,11 @@
               at least one uppercase letter;
             </p>
           </div>
-        </div>
 
-        <div class="input-field small">
-          <label for="confirm-password">Confirm password:</label>
-          <input type="password" name="confirm-password" id="confirm-password">
-        </div>
+          <div class="input-field small">
+            <label for="confirm-password">Confirm password:</label>
+            <input type="password" name="confirm-password" id="confirm-password">
+          </div>
 
       </form>
 

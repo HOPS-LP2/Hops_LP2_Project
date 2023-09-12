@@ -21,14 +21,13 @@ h2 {
   border-radius: 10px;
 }
 
-
 #signup-form {
   margin-top: 1vh;
   width: 22vw;
   height: 56vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 3vw;
+  column-gap: 2vw;
 }
 
 .input-field {

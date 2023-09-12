@@ -1,6 +1,10 @@
 package com.example.javawebapp;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.naming.spi.DirStateFactory.Result;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -18,11 +22,13 @@ public class LoginServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
-        if (email.equals(user1.getEmail()) && password.equals(user1.getPassword())) {
-            String contextPath = req.getContextPath();
-
-            resp.sendRedirect(contextPath + "/pages/home.html");
+        DatabaseConnection connection = new DatabaseConnection();
+        ResultSet resultSet = connection.GetData();
+        try {
+            System.out.println(resultSet.getInt("id"));
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
-
     }
 }
