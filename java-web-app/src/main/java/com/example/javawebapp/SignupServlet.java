@@ -87,6 +87,7 @@ public class SignupServlet extends HttpServlet {
             int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Insertion successful.");
+                req.getSession().setAttribute("loginFailed", null);
                 resp.sendRedirect("/java-web-app-1.0/pages/login.jsp");
             } else {
                 System.out.println("Insertion failed.");
