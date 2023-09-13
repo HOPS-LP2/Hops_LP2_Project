@@ -57,6 +57,12 @@ a {
   border: 1px solid grey;
 }
 
+.representation-img {
+  height: 32px;
+  width: 32px;
+  z-index: 1000;
+}
+
 #warning {
   color: rgb(222, 19, 19);
   text-align: center;

@@ -44,8 +44,14 @@
                     <input type="email" name="email" id="email" placeholder="Email" />
                     <img src="../public/icons/email-icon.png" alt="email-icon">
                 </div>
-                <p id="right"></p>
-                <p id="wrong"></p>
+
+                <c:if test="${not empty sessionScope.emailFound}">
+                    <p id="right">${sessionScope.emailFound}</p>
+                </c:if>
+                <c:if test="${not empty sessionScope.emailNotFound}">
+                    <p id="wrong">${sessionScope.emailNotFound}</p>
+                </c:if>
+
                 <div class="recover-btn">
                     <button type="submit" class="btn-recover">Next</button>
                 </div>

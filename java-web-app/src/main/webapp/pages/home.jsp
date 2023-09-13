@@ -28,12 +28,22 @@
             <img src="../public/icons/agencies-img.png" style="margin-left: 2vw;" class="representation-img">
             <p style="margin-left: 1vw;">Agencies</p>
         </div>
-        <a href="login.html">
-            <div class="login-access">
-                <img src="../public/icons/user-img.png" style="margin-left: 48vw;" class="representation-img" />
-                <p style="margin-left: 1vw;">Login</p>
-            </div>
-        </a>
+        <c:choose>
+            <c:when test="${sessionScope.loggedIn == true}">
+                <div class="login-access">
+                    <img src="../public/icons/user-img.png" style="margin-left: 48vw;" class="representation-img" />
+                    <p style="margin-left: 1vw;">${sessionScope.firstName}</p>
+                </div>
+            </c:when>
+            <c:otherwise>
+                <a href="login.jsp">
+                    <div class="login-access">
+                        <img src="../public/icons/user-img.png" style="margin-left: 48vw;" class="representation-img" />
+                        <p style="margin-left: 1vw;">Login</p>
+                    </div>
+                </a>
+            </c:otherwise>
+        </c:choose>
 
     </header>
 

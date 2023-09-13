@@ -28,12 +28,12 @@
             <img src="../public/icons/agencies-img.png" style="margin-left: 2vw;" class="representation-img">
             <p style="margin-left: 1vw;">Agencies</p>
         </div>
-        <a href="login.html">
-            <div class="login-access">
-                <img src="../public/icons/user-img.png" style="margin-left: 48vw;" class="representation-img" />
-                <p style="margin-left: 1vw;">Login</p>
-            </div>
-        </a>
+
+        <div class="login-access">
+            <img src="../public/icons/user-img.png" style="margin-left: 48vw;" class="representation-img" />
+            <p style="margin-left: 1vw;">Login</p>
+        </div>
+
     </header>
 
     <main>
@@ -56,12 +56,15 @@
                     <img src="../public/icons/eye-open.png" alt="eye-icon" class="show-password">
 
                 </div>
-                <a href=""><span>Forgot your password?</span></a>
-
-                <p id="warning">Email or password</p>
+                <a href="recoverPassword.jsp"><span>Forgot your password?</span></a>
+                <c:if test="${not empty sessionScope.loginFailed}">
+                    <p id="warning">${sessionScope.loginFailed}</p>
+                </c:if>
 
                 <div class="login-btns">
-                    <button type="button" class="btn-signup">Sign Up</button>
+                    <a href="signup.jsp">
+                        <button type="button" class="btn-signup">Sign Up</button>
+                    </a>
                     <button type="submit" class="btn-login">Login</button>
                 </div>
             </div>

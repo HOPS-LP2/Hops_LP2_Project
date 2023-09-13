@@ -7,11 +7,6 @@ main {
     /*box-shadow: 1px 0 0 5px rgba(0, 0, 0, 0.8);*/
 }
 
-.representation-img {
-    height: 32px;
-    width: 32px;
-}
-
 .login-image {
     height: 100%;
     width: 60%;
@@ -88,11 +83,6 @@ a>span {
     cursor: pointer;
 }
 
-#warning {
-    margin-bottom: -5vh;
-    color: blue;
-}
-
 .login-btns {
     display: flex;
     align-items: center;
@@ -137,4 +127,9 @@ a>span {
 .btn-signup:hover,
 .btn-login:hover {
     cursor: pointer;
+}
+
+#warning {
+    margin-bottom: -1vh;
+    color: firebrick;
 }
