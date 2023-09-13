@@ -3,6 +3,7 @@ package com.example.javawebapp;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.naming.Context;
@@ -10,6 +11,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -28,17 +30,51 @@ public class SignupServlet extends HttpServlet {
         String phoneNumber = req.getParameter("phone-number");
         String password = req.getParameter("password");
 
-        String sqlQuery = "INSERT INTO User (firstName, lastName, email, cpf, phoneNumber, password) VALUES (?, ?, ?, ?, ?, ?)";
         Connection connection = null;
         PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        String sqlQueryInsert = "INSERT INTO User (firstName, lastName, email, cpf, phoneNumber, password) VALUES (?, ?, ?, ?, ?, ?)";
+        String sqlQueryCheckEmail = "SELECT * FROM User WHERE email = ?";
+        String sqlQueryCheckCPF = "SELECT * FROM User WHERE cpf = ?";
 
         try {
             Context context = new InitialContext();
             DataSource dataSource = (DataSource) context.lookup("java:/comp/env/jdbc/MyDB");
 
             connection = dataSource.getConnection();
-            preparedStatement = connection.prepareStatement(sqlQuery);
-            // Set the values for the placeholders
+
+            preparedStatement = connection.prepareStatement(sqlQueryCheckEmail);
+            preparedStatement.setString(1, email);
+
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                req.getSession().setAttribute("message", "Email already in use");
+                resp.sendRedirect("/java-web-app-1.0/pages/signup.jsp");
+                return;
+            }
+
+            // Close the result set before reusing the preparedStatement
+            resultSet.close();
+            preparedStatement.close();
+
+            preparedStatement = connection.prepareStatement(sqlQueryCheckCPF);
+            preparedStatement.setString(1, cpf);
+
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                req.getSession().setAttribute("message", "SSN already in use");
+                resp.sendRedirect("/java-web-app-1.0/pages/signup.jsp");
+                return;
+            }
+
+            // Close the result set before reusing the preparedStatement
+            resultSet.close();
+            preparedStatement.close();
+
+            preparedStatement = connection.prepareStatement(sqlQueryInsert);
 
             preparedStatement.setString(1, firstName);
             preparedStatement.setString(2, lastName);
@@ -58,6 +94,9 @@ public class SignupServlet extends HttpServlet {
             e.printStackTrace();
         } finally {
             try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
                 if (preparedStatement != null) {
                     preparedStatement.close();
                 }

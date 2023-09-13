@@ -79,14 +79,16 @@
               at least one uppercase letter;
             </p>
           </div>
-
-          <div class="input-field small">
-            <label for="confirm-password">Confirm password:</label>
-            <input type="password" name="confirm-password" id="confirm-password">
-          </div>
+        </div>
+        <div class="input-field small">
+          <label for="confirm-password">Confirm password:</label>
+          <input type="password" name="confirm-password" id="confirm-password">
+        </div>
 
       </form>
-
+      <c:if test="${not empty sessionScope.message}">
+        <p id="warning">${sessionScope.message}</p>
+      </c:if>
       <p id="warning"></p>
       <button type="submit" class="large" form="signup-form">Confirm</button>
 
