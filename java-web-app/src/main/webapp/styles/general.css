@@ -56,3 +56,8 @@ a {
   height: 3vh;
   border: 1px solid grey;
 }
+
+#warning {
+  color: rgb(222, 19, 19);
+  text-align: center;
+}

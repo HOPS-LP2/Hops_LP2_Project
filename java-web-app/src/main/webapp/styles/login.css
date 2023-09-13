@@ -88,6 +88,11 @@ a>span {
     cursor: pointer;
 }
 
+#warning {
+    margin-bottom: -5vh;
+    color: blue;
+}
+
 .login-btns {
     display: flex;
     align-items: center;

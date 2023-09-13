@@ -71,15 +71,13 @@ button {
   transition: all .2s;
 }
 
+#warning {
+  margin-top: -1vh;
+}
+
 button:hover {
   background-color: var(--color);
   color: white;
-}
-
-#warning {
-  margin-top: -1vh;
-  color: rgb(222, 19, 19);
-  text-align: center;
 }
 
 input[name="password"] {
