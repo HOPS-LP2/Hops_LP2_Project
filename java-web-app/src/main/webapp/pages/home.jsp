@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Faltam Imagens de carros para exemplificar o slide-->
 
 <head>
     <meta charset="UTF-8">
