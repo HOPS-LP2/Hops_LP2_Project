@@ -1,6 +1,5 @@
 package com.example.javawebapp;
 
-import java.beans.Statement;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -34,45 +33,45 @@ public class SignupServlet extends HttpServlet {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-        java.sql.Statement statement = null;
 
         String sqlQueryInsert = "INSERT INTO User (firstName, lastName, email, cpf, phoneNumber, password) VALUES (?, ?, ?, ?, ?, ?)";
-        String sqlQueryCheckEmail = "SELECT * User WHERE email = ?";
-        String sqlQueryCheckCPF = "SELECT * User WHERE cpf = ?";
+        String sqlQueryCheckEmail = "SELECT * FROM User WHERE email = ?";
+        String sqlQueryCheckCPF = "SELECT * FROM User WHERE cpf = ?";
 
         try {
             Context context = new InitialContext();
             DataSource dataSource = (DataSource) context.lookup("java:/comp/env/jdbc/MyDB");
 
             connection = dataSource.getConnection();
-            statement = connection.createStatement();
 
             preparedStatement = connection.prepareStatement(sqlQueryCheckEmail);
             preparedStatement.setString(1, email);
 
-            resultSet = statement.executeQuery(sqlQueryCheckEmail);
+            resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                req.setAttribute("existingUser", "Email already in use in another account");
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/signup.jsp");
-                dispatcher.forward(req, resp);
+                req.getSession().setAttribute("message", "Email already in use");
+                resp.sendRedirect("/java-web-app-1.0/pages/signup.jsp");
                 return;
             }
 
+            // Close the result set before reusing the preparedStatement
+            resultSet.close();
             preparedStatement.close();
 
             preparedStatement = connection.prepareStatement(sqlQueryCheckCPF);
             preparedStatement.setString(1, cpf);
 
-            resultSet = statement.executeQuery(sqlQueryCheckCPF);
+            resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                req.setAttribute("existingUser", "SSN already in use in another account");
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/signup.jsp");
-                dispatcher.forward(req, resp);
+                req.getSession().setAttribute("message", "SSN already in use");
+                resp.sendRedirect("/java-web-app-1.0/pages/signup.jsp");
                 return;
             }
 
+            // Close the result set before reusing the preparedStatement
+            resultSet.close();
             preparedStatement.close();
 
             preparedStatement = connection.prepareStatement(sqlQueryInsert);
@@ -95,6 +94,9 @@ public class SignupServlet extends HttpServlet {
             e.printStackTrace();
         } finally {
             try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
                 if (preparedStatement != null) {
                     preparedStatement.close();
                 }

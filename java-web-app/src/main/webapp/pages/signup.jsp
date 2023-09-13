@@ -86,8 +86,8 @@
         </div>
 
       </form>
-      <c:if test="${not empty existingUser}">
-        <p id="warning">${existingUser}</p>
+      <c:if test="${not empty sessionScope.message}">
+        <p id="warning">${sessionScope.message}</p>
       </c:if>
       <p id="warning"></p>
       <button type="submit" class="large" form="signup-form">Confirm</button>
