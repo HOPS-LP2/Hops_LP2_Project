@@ -1,0 +1,85 @@
+header {
+    display: flex;
+    align-items: center;
+    height: 12vh;
+    justify-content: space-between;
+    padding: 0 2vw;
+}
+
+.search {
+    display: flex;
+}
+
+.search-box-wrapper {
+    position: relative;
+}
+
+.search-input {
+    background-color: #D99bd3;
+    font-size: 16px;
+    height: 3vh;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 10px;
+    margin-left: 40vw;
+}
+
+.search-icon {
+    width: 26px;
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+}
+
+.search-select {
+    margin-left: 2vw;
+    background-color: #D99bd3;
+    border: none;
+    font-size: 16px;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.search-select:focus {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.product {
+    background-color: #E8E8E8;
+    width: 14vw;
+    height: 24vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.catalog {
+    margin-top: 5vh;
+    display: flex;
+}
+
+.filter {
+    height: 100vh;
+    width: 20vw;
+    background-color: #E8E8E8;
+    margin: 0 5vw 10vh 5vw;
+    border-radius: 20px;
+}
+
+.cars {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(4, 15vw);
+}
+
+div.product~h1 {
+    margin: 2vh 0 2vh 0;
+}
+
+div.product>img {
+    height: 150px;
+    width: 250px;
+}

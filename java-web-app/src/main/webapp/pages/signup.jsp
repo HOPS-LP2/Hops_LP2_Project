@@ -79,11 +79,11 @@
               at least one uppercase letter;
             </p>
           </div>
-
-          <div class="input-field small">
-            <label for="confirm-password">Confirm password:</label>
-            <input type="password" name="confirm-password" id="confirm-password">
-          </div>
+        </div>
+        <div class="input-field small">
+          <label for="confirm-password">Confirm password:</label>
+          <input type="password" name="confirm-password" id="confirm-password">
+        </div>
 
       </form>
 
