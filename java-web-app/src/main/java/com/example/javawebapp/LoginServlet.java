@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        String sqlQueryCheckCredentials = "SELECT * FROM User WHERE email = ?";
+        String sqlQueryCheckCredentials = "SELECT * FROM Usuario WHERE email = ?";
 
         try {
             Context context = new InitialContext();
@@ -43,12 +43,11 @@ public class LoginServlet extends HttpServlet {
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                String passwordDb = resultSet.getString("password");
+                String passwordDb = resultSet.getString("senha");
                 if (password.equals(passwordDb)) {
                     req.getSession().setAttribute("loggedIn", true);
-                    String userName = resultSet.getString("firstName");
-                    req.getSession().setAttribute("firstName", userName);
-
+                    String userName = resultSet.getString("primeiro_nome");
+                    req.getSession().setAttribute("userName", userName);
                     resp.sendRedirect("/java-web-app-1.0/pages/home.jsp");
                 } else {
                     req.getSession().setAttribute("loginFailed", "Incorrect email or password!");
