@@ -67,13 +67,13 @@
                                 class="show-password">
 
                         </div>
-                        <a href="recoverPassword.jsp"><span>Forgot your password?</span></a>
+                        <a href="${pageContext.request.contextPath}/pages/recoverPassword.jsp"><span>Forgot your password?</span></a>
                         <c:if test="${not empty sessionScope.loginFailed}">
                             <p id="warning">${sessionScope.loginFailed}</p>
                         </c:if>
 
                         <div class="login-btns">
-                            <a href="signup.jsp">
+                            <a href="${pageContext.request.contextPath}/pages/signup.jsp">
                                 <button type="button" class="btn-signup">Sign Up</button>
                             </a>
                             <button type="submit" class="btn-login">Login</button>
@@ -81,7 +81,16 @@
                     </div>
                 </form>
             </main>
-            <script src="${pageContext.request.contextPath}/scripts/login.js"></script>
+            <script>
+                const show_password = document.querySelector(".show-password");
+                const password_input = document.querySelector("#password");
+
+                show_password.addEventListener("click", () => {
+                    password_input.type = password_input.type === "password" ? "text" : "password";
+
+                    show_password.src = show_password.src.includes("open") ? "${pageContext.request.contextPath}/public/icons/eye-close.png" : "${pageContext.request.contextPath}/public/icons/eye-open.png";
+                })
+            </script>
         </body>
 
         </html>

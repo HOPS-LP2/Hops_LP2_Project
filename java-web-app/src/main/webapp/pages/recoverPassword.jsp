@@ -22,7 +22,7 @@
             <img src="../public/icons/home-img.png" style="margin-left: 8vw;" class="representation-img" />
             <p style="margin-left: 1vw;">Home</p>
             <div class="line"></div>
-            <img src="../public/icons/car-img.png" style="margin-left: 2vw; width: 90%;" class="representation-img">
+            <img src="../public/icons/car-img.png" style="margin-left: 2vw;" class="representation-img">
             <p style="margin-left: 1vw;">Cars</p>
             <div class="line"></div>
             <img src="../public/icons/agencies-img.png" style="margin-left: 2vw;" class="representation-img">
