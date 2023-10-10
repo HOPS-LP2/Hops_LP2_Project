@@ -16,20 +16,40 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet(name = "login", value = "/login")
 public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        HttpSession session = req.getSession();
+
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+
+        int emailMinLength = 5;
+        int emailMaxLength = 100;
+        int passwordMinLength = 8;
+        int passwordMaxLength = 20;
+
+        boolean isEmailValid = Validation.isParameterValid(email, emailMinLength, emailMaxLength);
+        boolean isPasswordValid = Validation.isParameterValid(password, passwordMinLength, passwordMaxLength);
+
+        if (!isEmailValid) {
+            session.setAttribute("loginFailed", "Invalid Email");
+            req.getRequestDispatcher(req.getContextPath() + "login.jsp").forward(req, resp);
+        } else if (!isPasswordValid) {
+            session.setAttribute("loginFailed", "Invalid Password");
+            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+        }
 
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        String sqlQueryCheckCredentials = "SELECT * FROM Usuario WHERE email = ?";
+        String sqlQueryCheckCredentials = "SELECT email, senha, primeiro_nome FROM Usuario WHERE email = ?";
 
         try {
             Context context = new InitialContext();
@@ -44,22 +64,24 @@ public class LoginServlet extends HttpServlet {
 
             if (resultSet.next()) {
                 String passwordDb = resultSet.getString("senha");
+
                 if (password.equals(passwordDb)) {
+                    // All credentials are correct, user has logged in. Set his first name to a
+                    // session atribute
                     req.getSession().setAttribute("loggedIn", true);
                     String userName = resultSet.getString("primeiro_nome");
-                    req.getSession().setAttribute("userName", userName);
-                    resp.sendRedirect("/java-web-app-1.0/pages/home.jsp");
+                    session.setAttribute("userName", userName);
+                    resp.sendRedirect(req.getContextPath() + "home.jsp");
                 } else {
-                    req.getSession().setAttribute("loginFailed", "Incorrect email or password!");
-                    resp.sendRedirect("/java-web-app-1.0/pages/login.jsp");
+                    session.setAttribute("loginFailed", "Incorrect email or password!");
+                    req.getRequestDispatcher(req.getContextPath() + "login.jsp").forward(req, resp);
                 }
                 return;
             } else {
-                req.getSession().setAttribute("loginFailed", "Incorrect email or password!");
-                resp.sendRedirect("/java-web-app-1.0/pages/login.jsp");
+                session.setAttribute("loginFailed", "Incorrect email or password!");
+                req.getRequestDispatcher(req.getContextPath() + "login.jsp").forward(req, resp);
             }
 
-            // Close the result set before reusing the preparedStatement
             resultSet.close();
             preparedStatement.close();
 

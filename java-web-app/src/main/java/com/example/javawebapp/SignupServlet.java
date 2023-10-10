@@ -23,6 +23,8 @@ public class SignupServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        // Set post parameters to variables
         String firstName = req.getParameter("first-name");
         String lastName = req.getParameter("last-name");
         String email = req.getParameter("email");
@@ -30,13 +32,17 @@ public class SignupServlet extends HttpServlet {
         String phoneNumber = req.getParameter("phone-number");
         String password = req.getParameter("password");
 
+        // Prepare to connect
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        String sqlQueryInsert = "INSERT INTO User (firstName, lastName, email, cpf, phoneNumber, password) VALUES (?, ?, ?, ?, ?, ?)";
-        String sqlQueryCheckEmail = "SELECT * FROM User WHERE email = ?";
-        String sqlQueryCheckCPF = "SELECT * FROM User WHERE cpf = ?";
+        // Set queries for checking if email or cpf is already in use by an existing
+        // user
+        String sqlQueryCheckEmail = "SELECT email FROM User WHERE email = ?";
+        String sqlQueryCheckCPF = "SELECT cpf FROM User WHERE cpf = ?";
+        // Query for inserting new user's info
+        String sqlQueryInsert = "INSERT INTO usuario (primeiro_nome, segundo_nome, email, senha, cpf, telefone) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
             Context context = new InitialContext();
@@ -55,7 +61,6 @@ public class SignupServlet extends HttpServlet {
                 return;
             }
 
-            // Close the result set before reusing the preparedStatement
             resultSet.close();
             preparedStatement.close();
 
@@ -70,8 +75,6 @@ public class SignupServlet extends HttpServlet {
                 return;
             }
 
-            // Close the result set before reusing the preparedStatement
-            resultSet.close();
             preparedStatement.close();
 
             preparedStatement = connection.prepareStatement(sqlQueryInsert);
@@ -79,11 +82,10 @@ public class SignupServlet extends HttpServlet {
             preparedStatement.setString(1, firstName);
             preparedStatement.setString(2, lastName);
             preparedStatement.setString(3, email);
-            preparedStatement.setString(4, cpf);
-            preparedStatement.setString(5, phoneNumber);
-            preparedStatement.setString(6, password);
+            preparedStatement.setString(4, password);
+            preparedStatement.setString(5, cpf);
+            preparedStatement.setString(6, phoneNumber);
 
-            // Execute the query
             int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Insertion successful.");
