@@ -29,13 +29,8 @@ public class LoginServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
-        int emailMinLength = 5;
-        int emailMaxLength = 100;
-        int passwordMinLength = 8;
-        int passwordMaxLength = 20;
-
-        boolean isEmailValid = Validation.isParameterValid(email, emailMinLength, emailMaxLength);
-        boolean isPasswordValid = Validation.isParameterValid(password, passwordMinLength, passwordMaxLength);
+        boolean isEmailValid = Validation.isValidEmail(email);
+        boolean isPasswordValid = Validation.isPasswordValid(password);
 
         if (!isEmailValid) {
             session.setAttribute("loginFailed", "Invalid Email");

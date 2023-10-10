@@ -17,12 +17,14 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet(name = "signup", value = "/signup")
 public class SignupServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
 
         // Set post parameters to variables
         String firstName = req.getParameter("first-name");
@@ -31,6 +33,55 @@ public class SignupServlet extends HttpServlet {
         String cpf = req.getParameter("ssn");
         String phoneNumber = req.getParameter("phone-number");
         String password = req.getParameter("password");
+
+        int nameMinLength = 1;
+        int nameMaxLength = 100;
+
+        boolean isFirstNameValid = Validation.isParameterValid(firstName, nameMinLength, nameMaxLength);
+        if (!isFirstNameValid) {
+            session.setAttribute("message", "Invalid First Name");
+            req.getRequestDispatcher("/pages/signup.jsp").forward(req, resp);
+            return;
+        }
+
+        boolean isLastNameValid = Validation.isParameterValid(lastName, nameMinLength, nameMaxLength);
+        if (!isLastNameValid) {
+            session.setAttribute("message", "Invalid Last Name");
+            req.getRequestDispatcher("/pages/signup.jsp").forward(req, resp);
+            return;
+        }
+
+        boolean isEmailValid = Validation.isValidEmail(email);
+        if (!isEmailValid) {
+            session.setAttribute("message", "Invalid Email");
+            req.getRequestDispatcher("/pages/signup.jsp").forward(req, resp);
+            return;
+        }
+
+        boolean isCPFValid = Validation.isValidCPF(cpf);
+        if (!isCPFValid) {
+            session.setAttribute("message", "Invalid SSN");
+            req.getRequestDispatcher("/pages/signup.jsp").forward(req, resp);
+            return;
+        }
+
+        int phoneNumberMinLength = 9;
+        int phoneNumberMaxLength = 20;
+
+        boolean isPhoneNumberValid = Validation.containsOnlyNumbers(phoneNumber)
+                && Validation.isParameterValid(phoneNumber, phoneNumberMinLength, phoneNumberMaxLength);
+        if (!isPhoneNumberValid) {
+            session.setAttribute("message", "Invalid Phone Number");
+            req.getRequestDispatcher("/pages/signup.jsp").forward(req, resp);
+            return;
+        }
+
+        boolean isPasswordValid = Validation.isPasswordValid(password);
+        if (!isPasswordValid) {
+            session.setAttribute("message", "Password does not meet the requirements");
+            req.getRequestDispatcher("/pages/signup.jsp").forward(req, resp);
+            return;
+        }
 
         // Prepare to connect
         Connection connection = null;
