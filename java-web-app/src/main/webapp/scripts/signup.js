@@ -48,6 +48,21 @@ function validateCPF(strCPF) {
   return true;
 }
 
+const SSNInput = document.getElementById('ssn');
+
+SSNInput.addEventListener('input', function () {
+  var v = this.value;
+
+  if (isNaN(v[v.length - 1])) {
+    this.value = v.substring(0, v.length - 1);
+    return;
+  }
+
+  this.setAttribute("maxlength", "14");
+  if (v.length == 3 || v.length == 7) this.value += ".";
+  if (v.length == 11) this.value += "-";
+});
+
 const form = document.querySelector('#signup-form');
 form.addEventListener('submit', event => {
   const inputs = document.querySelectorAll('input');
@@ -87,10 +102,9 @@ form.addEventListener('submit', event => {
     return;
   }
 
-  const SSNInput = document.getElementById('ssn');
-  const ssn = SSNInput.value;
+  SSNInput.value = SSNInput.value.replace(/[.-]/g, '');
 
-  if (!validateCPF(ssn)) {
+  if (!validateCPF(SSNInput.value)) {
     warning.innerText = 'Invalid Social Security Number!';
     event.preventDefault();
     return;

@@ -39,10 +39,12 @@ public class LoginServlet extends HttpServlet {
 
         if (!isEmailValid) {
             session.setAttribute("loginFailed", "Invalid Email");
-            req.getRequestDispatcher(req.getContextPath() + "login.jsp").forward(req, resp);
+            req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
+            return;
         } else if (!isPasswordValid) {
             session.setAttribute("loginFailed", "Invalid Password");
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
+            return;
         }
 
         Connection connection = null;
@@ -71,15 +73,15 @@ public class LoginServlet extends HttpServlet {
                     req.getSession().setAttribute("loggedIn", true);
                     String userName = resultSet.getString("primeiro_nome");
                     session.setAttribute("userName", userName);
-                    resp.sendRedirect(req.getContextPath() + "home.jsp");
+                    resp.sendRedirect(req.getContextPath() + "/pages/home.jsp");
                 } else {
-                    session.setAttribute("loginFailed", "Incorrect email or password!");
-                    req.getRequestDispatcher(req.getContextPath() + "login.jsp").forward(req, resp);
+                    session.setAttribute("loginFailed", "Incorrect password!");
+                    req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
                 }
                 return;
             } else {
-                session.setAttribute("loginFailed", "Incorrect email or password!");
-                req.getRequestDispatcher(req.getContextPath() + "login.jsp").forward(req, resp);
+                session.setAttribute("loginFailed", "This email is not associated to an existing account");
+                req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
             }
 
             resultSet.close();

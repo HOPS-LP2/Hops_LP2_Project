@@ -23,7 +23,7 @@
       <img src="../public/icons/home-img.png" style="margin-left: 8vw;" class="representation-img" />
       <p style="margin-left: 1vw;">Home</p>
       <div class="line"></div>
-      <img src="../public/icons/car-img.png" style="margin-left: 2vw; width: 90%;" class="representation-img">
+      <img src="../public/icons/car-img.png" style="margin-left: 2vw;" class="representation-img">
       <p style="margin-left: 1vw;">Cars</p>
       <div class="line"></div>
       <img src="../public/icons/agencies-img.png" style="margin-left: 2vw;" class="representation-img">
@@ -44,27 +44,30 @@
       <form action="../signup" method="post" id="signup-form">
         <div class="input-field small">
           <label for="first-name">First name:</label>
-          <input type="text" name="first-name" id="first-name">
+          <input type="text" name="first-name" id="first-name"
+            value="${not empty param.first-name ? param.first-name : ''}">
         </div>
 
         <div class="input-field small">
           <label for="last-name">Last name:</label>
-          <input type="text" name="last-name" id="last-name">
+          <input type="text" name="last-name" id="last-name"
+            value="${not empty param.last-name ? param.last-name : ''}">
         </div>
 
         <div class="input-field large">
           <label for="email">Email:</label>
-          <input type="text" name="email" id="email">
+          <input type="text" name="email" id="email" value="${not empty param.email ? param.email : ''}">
         </div>
 
         <div class="input-field large">
           <label for="ssn">Social Security Number (SSN):</label>
-          <input type="text" name="ssn" id="ssn">
+          <input type="text" name="ssn" id="ssn" value="${not empty param.ssn ? param.ssn : ''}">
         </div>
 
         <div class="input-field large">
           <label for="phone-number">Phone Number:</label>
-          <input type="tel" name="phone-number" id="phone-number" />
+          <input type="tel" name="phone-number" id="phone-number"
+            value="${not empty param.phone-number ? param.phone-number : ''}" />
         </div>
 
         <div class="input-field small">

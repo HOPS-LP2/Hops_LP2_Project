@@ -39,8 +39,8 @@ public class SignupServlet extends HttpServlet {
 
         // Set queries for checking if email or cpf is already in use by an existing
         // user
-        String sqlQueryCheckEmail = "SELECT email FROM User WHERE email = ?";
-        String sqlQueryCheckCPF = "SELECT cpf FROM User WHERE cpf = ?";
+        String sqlQueryCheckEmail = "SELECT email FROM usuario WHERE email = ?";
+        String sqlQueryCheckCPF = "SELECT cpf FROM usuario WHERE cpf = ?";
         // Query for inserting new user's info
         String sqlQueryInsert = "INSERT INTO usuario (primeiro_nome, segundo_nome, email, senha, cpf, telefone) VALUES (?, ?, ?, ?, ?, ?)";
 
