@@ -64,7 +64,7 @@
 
             </header>
 
-            <main>
+            <main id="main-login">
                 <div class="login-image">
                     <h3>Colocar alguma coisa aqui dentro</h3>
                 </div>

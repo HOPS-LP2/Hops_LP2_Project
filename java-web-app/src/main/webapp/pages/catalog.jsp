@@ -16,21 +16,45 @@
 <body>
     <header>
         <div>
-            <h1 style="margin-left: 3vw; font-size: 25px;">HOPS</h1>
+            <h1 class="logo">HOPS</h1>
         </div>
         <div class="quick-access">
-            <img src="../public/icons/home-img.png" style="margin-left: 8vw;" class="representation-img" />
-            <p style="margin-left: 1vw;">Home</p>
+
+            <a href="${pageContext.request.contextPath}/pages/home.jsp">
+                <img src="${pageContext.request.contextPath}/public/icons/home-img.png" class="representation-img" />
+            </a>
+            <a href="${pageContext.request.contextPath}/pages/home.jsp">
+                <p class="text-header">Home</p>
+            </a>
+
             <div class="line"></div>
-            <img src="../public/icons/agencies-img.png" style="margin-left: 2vw;" class="representation-img">
-            <p style="margin-left: 1vw;">Agencies</p>
+
+            <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
+                <img src="${pageContext.request.contextPath}/public/icons/car-img.png" class="representation-img">
+            </a>
+            <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
+                <p class="text-header">Cars</p>
+            </a>
+
+            <div class="line"></div>
+
+            <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
+                <img src="${pageContext.request.contextPath}/public/icons/agencies-img.png" class="representation-img">
+            </a>
+            <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
+                <p class="text-header">Agencies</p>
+            </a>
         </div>
-        <a href="login.html">
-            <div class="login-access">
-                <img src="../public/icons/user-img.png" style="margin-left: 48vw;" class="representation-img" />
-                <p style="margin-left: 1vw;">Login</p>
-            </div>
-        </a>
+
+        <div class="login-access">
+            <a href="${pageContext.request.contextPath}/pages/login.jsp">
+                <img src="${pageContext.request.contextPath}/public/icons/user-img.png"
+                    class="representation-img" /></a>
+            <a href="${pageContext.request.contextPath}/pages/login.jsp">
+                <p class="text-header">Login</p>
+            </a>
+        </div>
+
     </header>
     <main>
         <header>

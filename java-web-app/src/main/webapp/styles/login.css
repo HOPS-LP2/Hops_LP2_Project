@@ -1,6 +1,7 @@
-main {
-    margin: 26vh auto;
-    height: 50vh;
+#main-login {
+    margin: 18vh 26vh 26vh 26vh;
+    height: 56vh;
+    /*arrumar height da main*/
     width: 60vw;
     display: flex;
     border-radius: 20px;
@@ -132,4 +133,9 @@ a>span {
 #warning {
     margin-bottom: -1vh;
     color: firebrick;
+}
+
+#right {
+    margin-bottom: -1vh;
+    color: limegreen;
 }
