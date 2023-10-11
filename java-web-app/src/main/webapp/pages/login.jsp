@@ -67,7 +67,11 @@
                                 class="show-password">
 
                         </div>
-                        <a href="${pageContext.request.contextPath}/pages/recoverPassword.jsp"><span>Forgot your password?</span></a>
+                        <a href="${pageContext.request.contextPath}/pages/recoverPassword.jsp"><span>Forgot your
+                                password?</span></a>
+                        <c:if test="${not empty sessionScope.passwordReset}">
+                            <p id="right">${sessionScope.passwordReset}</p>
+                        </c:if>
                         <c:if test="${not empty sessionScope.loginFailed}">
                             <p id="warning">${sessionScope.loginFailed}</p>
                         </c:if>
