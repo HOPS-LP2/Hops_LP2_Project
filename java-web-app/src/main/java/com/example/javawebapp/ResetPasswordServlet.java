@@ -23,9 +23,7 @@ public class ResetPasswordServlet extends HttpServlet {
         } else {
             req.getSession().setAttribute("passwordReset", "Password Reset Succesfully.");
             resp.sendRedirect(req.getContextPath() + "/pages/login.jsp");
-
         }
 
-        System.out.println(password);
     }
 }
