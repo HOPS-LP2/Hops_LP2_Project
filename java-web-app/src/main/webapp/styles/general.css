@@ -43,7 +43,6 @@ a {
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding-right: 8vw;
 }
 
 .login-access p {
