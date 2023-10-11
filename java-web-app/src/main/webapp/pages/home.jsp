@@ -9,8 +9,8 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Home</title>
-            <link rel="stylesheet" href="../styles/general.css">
-            <link rel="stylesheet" href="../styles/home.css">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/general.css">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/home.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
@@ -20,32 +20,59 @@
         <body>
             <header>
                 <div>
-                    <h1 style="margin-left: 3vw; font-size: 25px;">HOPS</h1>
+                    <h1 class="logo">HOPS</h1>
                 </div>
                 <div class="quick-access">
-                    <img src="../public/icons/home-img.png" style="margin-left: 8vw;" class="representation-img" />
-                    <p style="margin-left: 1vw;">Home</p>
+                    <a href="${pageContext.request.contextPath}/pages/home.jsp">
+                        <img src="${pageContext.request.contextPath}/public/icons/home-img.png"
+                            class="representation-img" />
+                    </a>
+                    <a href="${pageContext.request.contextPath}/pages/home.jsp">
+                        <p class="text-header">Home</p>
+                    </a>
+
                     <div class="line"></div>
-                    <img src="../public/icons/car-img.png" style="margin-left: 2vw;" class="representation-img">
-                    <p style="margin-left: 1vw;">Cars</p>
+
+                    <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
+                        <img src="${pageContext.request.contextPath}/public/icons/car-img.png"
+                            class="representation-img">
+                    </a>
+                    <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
+                        <p class="text-header">Cars</p>
+                    </a>
+
                     <div class="line"></div>
-                    <img src="../public/icons/agencies-img.png" style="margin-left: 2vw;" class="representation-img">
-                    <p style="margin-left: 1vw;">Agencies</p>
+
+                    <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
+                        <img src="${pageContext.request.contextPath}/public/icons/agencies-img.png"
+                            class="representation-img">
+                    </a>
+                    <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
+                        <p class="text-header">Agencies</p>
+                    </a>
                 </div>
                 <c:choose>
                     <c:when test="${sessionScope.loggedIn == true}">
                         <div class="login-access">
-                            <img src="../public/icons/user-img.png" style="margin-left: 48vw;"
-                                class="representation-img" />
-                            <p style="margin-left: 1vw;">${sessionScope.userName}</p>
+                            <a href="${pageContext.request.contextPath}/pages/login.jsp">
+                                <img src="${pageContext.request.contextPath}/public/icons/user-img.png"
+                                    class="representation-img" />
+                            </a>
+                            <a href="${pageContext.request.contextPath}/pages/login.jsp">
+                                <p class="text-header">${sessionScope.userName}</p>
+                            </a>
                         </div>
                     </c:when>
                     <c:otherwise>
                         <a href="login.jsp">
                             <div class="login-access">
-                                <img src="../public/icons/user-img.png" style="margin-left: 48vw;"
-                                    class="representation-img" />
-                                <p style="margin-left: 1vw;">Login</p>
+                                <a href="${pageContext.request.contextPath}/pages/login.jsp">
+                                    <img src="${pageContext.request.contextPath}/public/icons/user-img.png"
+                                        class="representation-img" />
+                                </a>
+                                <a href="${pageContext.request.contextPath}/pages/login.jsp">
+                                    <p class="text-header">Login</p>
+                                </a>
                             </div>
                         </a>
                     </c:otherwise>
@@ -74,7 +101,8 @@
                                 <input type="time" name="time" id="time" style="width: 6vw;" />
                             </div>
                             <div style="margin-left: 2vw;">
-                                <button type="submit" class="btn-search">Search <img src="../public/icons/btn-img.png"
+                                <button type="submit" class="btn-search">Search <img
+                                        src="${pageContext.request.contextPath}/public/icons/btn-img.png"
                                         class="btn-img" /></button>
                             </div>
                         </div>
@@ -87,50 +115,60 @@
                     </div>
                     <div class="touch-slider">
                         <div>
-                            <div class="slide"><img src="../public/cars/bmw.png" /></div>
+                            <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                            </div>
                             <h1>BMW X6</h1>
                         </div>
                         <div>
-                            <div class="slide"><img src="../public/cars/fiat.png" /></div>
+                            <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/fiat.png" />
+                            </div>
                             <h1>FIAT Mobi</h1>
                         </div>
                         <div>
-                            <div class="slide"><img src="../public/cars/nissan.png" /></div>
+                            <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/nissan.png" />
+                            </div>
                             <h1>NISSAN Versa Sense</h1>
                         </div>
                         <div>
-                            <div class="slide"><img src="../public/cars/bmw.png" /></div>
+                            <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                            </div>
                             <h1>BMW X6</h1>
                         </div>
                         <div>
-                            <div class="slide"><img src="../public/cars/bmw.png" /></div>
+                            <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                            </div>
                             <h1>BMW X6</h1>
                         </div>
                         <div>
-                            <div class="slide"><img src="../public/cars/bmw.png" /></div>
+                            <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                            </div>
                             <h1>BMW X6</h1>
                         </div>
                         <div>
-                            <div class="slide"><img src="../public/cars/bmw.png" /></div>
+                            <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                            </div>
                             <h1>BMW X6</h1>
                         </div>
                         <div>
-                            <div class="slide"><img src="../public/cars/bmw.png" /></div>
+                            <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                            </div>
                             <h1>BMW X6</h1>
                         </div>
                         <div>
-                            <div class="slide"><img src="../public/cars/bmw.png" /></div>
+                            <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                            </div>
                             <h1>BMW X6</h1>
                         </div>
                         <div style="margin-right: 2rem;">
-                            <div class="slide"><img src="../public/cars/bmw.png" /></div>
+                            <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                            </div>
                             <h1>BMW X6</h1>
                         </div>
                     </div>
                 </section>
             </main>
 
-            <script src="../scripts/home.js"></script>
+            <script src="${pageContext.request.contextPath}/scripts/home.js"></script>
         </body>
 
         </html>
