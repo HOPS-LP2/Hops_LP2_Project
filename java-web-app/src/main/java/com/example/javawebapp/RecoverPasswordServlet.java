@@ -24,11 +24,19 @@ public class RecoverPasswordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
 
+        boolean isEmailValid = Validation.isValidEmail(email);
+        if (!isEmailValid) {
+            req.getSession().setAttribute("emailNotFound", "Invalid Email");
+            req.getSession().setAttribute("emailFound", null);
+            resp.sendRedirect(req.getContextPath() + "/pages/recoverPassword.jsp");
+            return;
+        }
+
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        String sqlQueryCheckCredentials = "SELECT * FROM User WHERE email = ?";
+        String sqlQueryCheckCredentials = "SELECT id FROM Usuario WHERE email = ?";
 
         try {
             Context context = new InitialContext();
@@ -48,10 +56,9 @@ public class RecoverPasswordServlet extends HttpServlet {
             } else {
                 req.getSession().setAttribute("emailNotFound", "This email is not associated to a HOPS account!");
                 req.getSession().setAttribute("emailFound", null);
-
             }
 
-            resp.sendRedirect("/java-web-app-1.0/pages/recoverPassword.jsp");
+            resp.sendRedirect(req.getContextPath() + "/pages/recoverPassword.jsp");
 
             resultSet.close();
             preparedStatement.close();

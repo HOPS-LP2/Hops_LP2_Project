@@ -28,7 +28,7 @@
             <img src="../public/icons/agencies-img.png" style="margin-left: 2vw;" class="representation-img">
             <p style="margin-left: 1vw;">Agencies</p>
         </div>
-        <a href="login.html">
+        <a href="login.jsp">
             <div class="login-access">
                 <img src="../public/icons/user-img.png" style="margin-left: 48vw;" class="representation-img" />
                 <p style="margin-left: 1vw;">Login</p>
@@ -37,7 +37,7 @@
     </header>
 
     <main>
-        <form action="../recover" method="post" class="recover-color">
+        <form action="${pageContext.request.contextPath}/recover" method="post" class="recover-color">
             <div class="recover">
                 <h1 style="text-align: center; margin-top: 0">Forgot Password</h1>
                 <div class="input-div">
