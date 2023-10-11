@@ -9,6 +9,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Catalog │ HOPS</title>
+            <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" />
             <link rel="stylesheet" href="../styles/general.css">
             <link rel="stylesheet" href="../styles/catalog.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
