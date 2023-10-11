@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        String sqlQueryCheckCredentials = "SELECT email, senha, primeiro_nome FROM Usuario WHERE email = ?";
+        String sqlQueryCheckCredentials = "SELECT * FROM Usuario WHERE email = ?";
 
         try {
             Context context = new InitialContext();

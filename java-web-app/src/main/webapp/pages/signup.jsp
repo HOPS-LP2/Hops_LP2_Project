@@ -49,7 +49,7 @@
       <div class="signup">
         <h2>Sign Up</h2>
 
-        <form action="../signup" method="post" id="signup-form">
+        <form action="${pageContext.request.contextPath}/signup" method="post" id="signup-form">
           <div class="input-field small">
             <label for="first-name">First name:</label>
             <input type="text" name="first-name" id="first-name" value="${not empty param['first-name'] ? param['first-name'] : ''}">
