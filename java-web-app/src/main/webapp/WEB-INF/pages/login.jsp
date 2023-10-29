@@ -14,8 +14,8 @@
                     <fmt:message key="login.title" /> &VerticalLine; HOPS
                 </title>
                 <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" />
-                <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/login.css">
-                <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/general.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/login.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/general.css">
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
@@ -30,7 +30,7 @@
                     <div class="quick-access">
 
                         <a href="${pageContext.request.contextPath}/pages/home.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/home-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/home-img.png"
                                 class="representation-img" />
                         </a>
                         <a href="${pageContext.request.contextPath}/pages/home.jsp">
@@ -42,7 +42,7 @@
                         <div class="line"></div>
 
                         <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/car-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/car-img.png"
                                 class="representation-img">
                         </a>
                         <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
@@ -54,7 +54,7 @@
                         <div class="line"></div>
 
                         <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/agencies-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/agencies-img.png"
                                 class="representation-img">
                         </a>
                         <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
@@ -66,7 +66,7 @@
 
                     <div class="login-access">
                         <a href="${pageContext.request.contextPath}/pages/login.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/user-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/user-img.png"
                                 class="representation-img" /></a>
                         <a href="${pageContext.request.contextPath}/pages/login.jsp">
                             <p class="text-header">
@@ -92,19 +92,19 @@
                                 <input type="email" name="email" id="email"
                                     placeholder="<fmt:message key='login.email' />"
                                     value="${not empty param.email ? param.email : ''}" />
-                                <img src="${pageContext.request.contextPath}/public/icons/email-icon.png"
+                                <img src="${pageContext.request.contextPath}/resources/public/icons/email-icon.png"
                                     alt="email-icon">
                             </div>
                             <div class="input-div" style="margin-top: 2vh;">
 
-                                <img src="${pageContext.request.contextPath}/public/icons/password-icon.png"
+                                <img src="${pageContext.request.contextPath}/resources/public/icons/password-icon.png"
                                     alt="password-icon">
 
                                 <input type="password" name="password" id="password"
                                     placeholder="<fmt:message key='login.password' />" />
 
-                                <img src="${pageContext.request.contextPath}/public/icons/eye-open.png" alt="eye-icon"
-                                    class="show-password">
+                                <img src="${pageContext.request.contextPath}/resources/public/icons/eye-open.png"
+                                    alt="eye-icon" class="show-password">
 
                             </div>
                             <a href="${pageContext.request.contextPath}/pages/recoverPassword.jsp">
@@ -139,7 +139,7 @@
                     show_password.addEventListener("click", () => {
                         password_input.type = password_input.type === "password" ? "text" : "password";
 
-                        show_password.src = show_password.src.includes("open") ? "${pageContext.request.contextPath}/public/icons/eye-close.png" : "${pageContext.request.contextPath}/public/icons/eye-open.png";
+                        show_password.src = show_password.src.includes("open") ? "${pageContext.request.contextPath}/resources/public/icons/eye-close.png" : "${pageContext.request.contextPath}/resources/public/icons/eye-open.png";
                     })
                 </script>
             </body>

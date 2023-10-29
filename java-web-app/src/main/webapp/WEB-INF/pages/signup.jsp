@@ -13,8 +13,8 @@
           <fmt:message key="signup.title" /> &VerticalLine; HOPS
         </title>
         <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" />
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/general.css">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/signup.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/general.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/signup.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,10 +29,11 @@
           </div>
           <div class="quick-access">
 
-            <a href="${pageContext.request.contextPath}/pages/home.jsp">
-              <img src="${pageContext.request.contextPath}/public/icons/home-img.png" class="representation-img" />
+            <a href="${pageContext.request.contextPath}/">
+              <img src="${pageContext.request.contextPath}/resources/public/icons/home-img.png"
+                class="representation-img" />
             </a>
-            <a href="${pageContext.request.contextPath}/pages/home.jsp">
+            <a href="${pageContext.request.contextPath}/">
               <p class="text-header">
                 <fmt:message key="general.home" />
               </p>
@@ -41,7 +42,8 @@
             <div class="line"></div>
 
             <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
-              <img src="${pageContext.request.contextPath}/public/icons/car-img.png" class="representation-img">
+              <img src="${pageContext.request.contextPath}/resources/public/icons/car-img.png"
+                class="representation-img">
             </a>
             <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
               <p class="text-header">
@@ -52,7 +54,8 @@
             <div class="line"></div>
 
             <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
-              <img src="${pageContext.request.contextPath}/public/icons/agencies-img.png" class="representation-img">
+              <img src="${pageContext.request.contextPath}/resources/public/icons/agencies-img.png"
+                class="representation-img">
             </a>
             <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
               <p class="text-header">
@@ -63,7 +66,8 @@
 
           <div class="login-access">
             <a href="${pageContext.request.contextPath}/pages/login.jsp">
-              <img src="${pageContext.request.contextPath}/public/icons/user-img.png" class="representation-img" /></a>
+              <img src="${pageContext.request.contextPath}/resources/public/icons/user-img.png"
+                class="representation-img" /></a>
             <a href="${pageContext.request.contextPath}/pages/login.jsp">
               <p class="text-header">
                 <fmt:message key="general.login" />

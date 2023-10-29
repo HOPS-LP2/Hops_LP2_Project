@@ -13,8 +13,8 @@
                     <fmt:message key="recoverPassword.title" /> &VerticalLine; HOPS
                 </title>
                 <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" />
-                <link rel="stylesheet" href="../styles/recoverPassword.css">
-                <link rel="stylesheet" href="../styles/general.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/recoverPassword.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/general.css">
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
@@ -29,7 +29,7 @@
                     <div class="quick-access">
 
                         <a href="${pageContext.request.contextPath}/pages/home.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/home-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/home-img.png"
                                 class="representation-img" />
                         </a>
                         <a href="${pageContext.request.contextPath}/pages/home.jsp">
@@ -41,7 +41,7 @@
                         <div class="line"></div>
 
                         <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/car-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/car-img.png"
                                 class="representation-img">
                         </a>
                         <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
@@ -53,7 +53,7 @@
                         <div class="line"></div>
 
                         <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/agencies-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/agencies-img.png"
                                 class="representation-img">
                         </a>
                         <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
@@ -65,7 +65,7 @@
 
                     <div class="login-access">
                         <a href="${pageContext.request.contextPath}/pages/login.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/user-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/user-img.png"
                                 class="representation-img" /></a>
                         <a href="${pageContext.request.contextPath}/pages/login.jsp">
                             <p class="text-header">
@@ -85,7 +85,8 @@
                             <div class="input-div">
                                 <input type="email" name="email" id="email"
                                     placeholder="<fmt:message key='recoverPassword.email' />" />
-                                <img src="../public/icons/email-icon.png" alt="email-icon">
+                                <img src="${pageContext.request.contextPath}/resources/public/icons/email-icon.png"
+                                    alt="email-icon">
                             </div>
 
                             <c:if test="${not empty sessionScope.emailFound}">
@@ -103,7 +104,7 @@
                         </div>
                     </form>
                 </main>
-                <script src="../scripts/recoverPassword.js"></script>
+                <script src="${pageContext.request.contextPath}/scripts/recoverPassword.js"></script>
             </body>
 
             </html>

@@ -13,8 +13,8 @@
                     <fmt:message key="resetPassword.title" /> &VerticalLine; HOPS
                 </title>
                 <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" />
-                <link rel="stylesheet" href="../styles/resetPassword.css">
-                <link rel="stylesheet" href="../styles/general.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/resetPassword.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/general.css">
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
@@ -29,7 +29,7 @@
                     <div class="quick-access">
 
                         <a href="${pageContext.request.contextPath}/pages/home.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/home-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/home-img.png"
                                 class="representation-img" />
                         </a>
                         <a href="${pageContext.request.contextPath}/pages/home.jsp">
@@ -41,7 +41,7 @@
                         <div class="line"></div>
 
                         <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/car-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/car-img.png"
                                 class="representation-img">
                         </a>
                         <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
@@ -53,7 +53,7 @@
                         <div class="line"></div>
 
                         <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/agencies-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/agencies-img.png"
                                 class="representation-img">
                         </a>
                         <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
@@ -65,7 +65,7 @@
 
                     <div class="login-access">
                         <a href="${pageContext.request.contextPath}/pages/login.jsp">
-                            <img src="${pageContext.request.contextPath}/public/icons/user-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/user-img.png"
                                 class="representation-img" /></a>
                         <a href="${pageContext.request.contextPath}/pages/login.jsp">
                             <p class="text-header">
@@ -84,22 +84,26 @@
                             </h1>
                             <div class="input-div">
 
-                                <img src="../public/icons/password-icon.png" alt="password-icon">
+                                <img src="${pageContext.request.contextPath}/resources/public/icons/password-icon.png"
+                                    alt="password-icon">
 
                                 <input type="password" name="password" id="password"
                                     placeholder="<fmt:message key='resetPassword.new-password' />" />
 
-                                <img src="../public/icons/eye-open.png" alt="eye-icon" class="show-password">
+                                <img src="${pageContext.request.contextPath}/resources/public/icons/eye-open.png"
+                                    alt="eye-icon" class="show-password">
 
                             </div>
                             <div class="input-div" style="margin-top: 2vh;">
 
-                                <img src="../public/icons/password-icon.png" alt="password-icon">
+                                <img src="${pageContext.request.contextPath}/resources/public/icons/password-icon.png"
+                                    alt="password-icon">
 
                                 <input type="password" name="confirm-password" id="confirm-password"
                                     placeholder="<fmt:message key='resetPassword.confirm-password' />" />
 
-                                <img src="../public/icons/eye-open.png" alt="eye-icon" class="show-confirm-password">
+                                <img src="${pageContext.request.contextPath}/resources/public/icons/eye-open.png"
+                                    alt="eye-icon" class="show-confirm-password">
 
                             </div>
                             <p id="wrong"></p>
@@ -111,7 +115,7 @@
                         </div>
                     </form>
                 </main>
-                <script src="../scripts/resetPassword.js"></script>
+                <script src="${pageContext.request.contextPath}/resources/scripts/resetPassword.js"></script>
             </body>
 
             </html>

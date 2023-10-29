@@ -13,8 +13,8 @@
                 <title>
                     <fmt:message key="home.title" /> &VerticalLine; HOPS
                 </title>
-                <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/general.css">
-                <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/home.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/general.css">
+                <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/home.css">
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
@@ -28,7 +28,7 @@
                     </div>
                     <div class="quick-access">
                         <a href="${pageContext.request.contextPath}/home">
-                            <img src="${pageContext.request.contextPath}/public/icons/home-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/home-img.png"
                                 class="representation-img" />
                         </a>
                         <a href="${pageContext.request.contextPath}/home">
@@ -40,7 +40,7 @@
                         <div class="line"></div>
 
                         <a href="${pageContext.request.contextPath}/catalog">
-                            <img src="${pageContext.request.contextPath}/public/icons/car-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/car-img.png"
                                 class="representation-img">
                         </a>
                         <a href="${pageContext.request.contextPath}/catalog">
@@ -52,7 +52,7 @@
                         <div class="line"></div>
 
                         <a href="${pageContext.request.contextPath}/agencies">
-                            <img src="${pageContext.request.contextPath}/public/icons/agencies-img.png"
+                            <img src="${pageContext.request.contextPath}/resources/public/icons/agencies-img.png"
                                 class="representation-img">
                         </a>
                         <a href="${pageContext.request.contextPath}/agencies">
@@ -64,7 +64,7 @@
                     <c:choose>
                         <c:when test="${sessionScope.loggedIn == true}">
                             <div class="login-access">
-                                <img src="${pageContext.request.contextPath}/public/icons/user-img.png"
+                                <img src="${pageContext.request.contextPath}/resources/public/icons/user-img.png"
                                     class="representation-img" />
                                 <a href="${pageContext.request.contextPath}/login">
                                     <p class="text-header">${sessionScope.userName}</p>
@@ -75,7 +75,7 @@
                             <a href="${pageContext.request.contextPath}/login">
                                 <div class="login-access">
                                     <a href="${pageContext.request.contextPath}/login">
-                                        <img src="${pageContext.request.contextPath}/public/icons/user-img.png"
+                                        <img src="${pageContext.request.contextPath}/resources/public/icons/user-img.png"
                                             class="representation-img" />
                                     </a>
                                     <a href="${pageContext.request.contextPath}/login">
@@ -120,7 +120,7 @@
                                 </div>
                                 <div style="margin-left: 2vw;">
                                     <button type="submit" class="btn-search">Search <img
-                                            src="${pageContext.request.contextPath}/public/icons/btn-img.png"
+                                            src="${pageContext.request.contextPath}/resources/public/icons/btn-img.png"
                                             class="btn-img" /></button>
                                 </div>
                             </div>
@@ -135,53 +135,62 @@
                         </div>
                         <div class="touch-slider">
                             <div>
-                                <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                                <div class="slide"><img
+                                        src="${pageContext.request.contextPath}/resources/public/cars/bmw.png" />
                                 </div>
                                 <h1>BMW X6</h1>
                             </div>
                             <div>
-                                <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/fiat.png" />
+                                <div class="slide"><img
+                                        src="${pageContext.request.contextPath}/resources/public/cars/fiat.png" />
                                 </div>
                                 <h1>FIAT Mobi</h1>
                             </div>
                             <div>
                                 <div class="slide"><img
-                                        src="${pageContext.request.contextPath}/public/cars/nissan.png" />
+                                        src="${pageContext.request.contextPath}/resources/public/cars/nissan.png" />
                                 </div>
                                 <h1>NISSAN Versa Sense</h1>
                             </div>
                             <div>
-                                <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                                <div class="slide"><img
+                                        src="${pageContext.request.contextPath}/resources/public/cars/bmw.png" />
                                 </div>
                                 <h1>BMW X6</h1>
                             </div>
                             <div>
-                                <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                                <div class="slide"><img
+                                        src="${pageContext.request.contextPath}/resources/public/cars/bmw.png" />
                                 </div>
                                 <h1>BMW X6</h1>
                             </div>
                             <div>
-                                <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                                <div class="slide"><img
+                                        src="${pageContext.request.contextPath}/resources/public/cars/bmw.png" />
                                 </div>
                                 <h1>BMW X6</h1>
                             </div>
                             <div>
-                                <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                                <div class="slide"><img
+                                        src="${pageContext.request.contextPath}/resources/public/cars/bmw.png" />
                                 </div>
                                 <h1>BMW X6</h1>
                             </div>
                             <div>
-                                <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                                <div class="slide"><img
+                                        src="${pageContext.request.contextPath}/resources/public/cars/bmw.png" />
                                 </div>
                                 <h1>BMW X6</h1>
                             </div>
                             <div>
-                                <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                                <div class="slide"><img
+                                        src="${pageContext.request.contextPath}/resources/public/cars/bmw.png" />
                                 </div>
                                 <h1>BMW X6</h1>
                             </div>
                             <div style="margin-right: 2rem;">
-                                <div class="slide"><img src="${pageContext.request.contextPath}/public/cars/bmw.png" />
+                                <div class="slide"><img
+                                        src="${pageContext.request.contextPath}/resources/public/cars/bmw.png" />
                                 </div>
                                 <h1>BMW X6</h1>
                             </div>
