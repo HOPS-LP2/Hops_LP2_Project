@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>java-web-app</artifactId>
+    <artifactId>hops</artifactId>
     <version>1.0</version>
-    <name>java-web-app</name>
+    <name>hops</name>
     <packaging>war</packaging>
 
     <properties>
@@ -60,6 +60,12 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version> 
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>8.0.1.Final</version>
         </dependency>
 
     </dependencies>

@@ -9,7 +9,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" />
-            <title>Home │ HOPS</title>
+            <title>Home &VerticalLine; HOPS</title>
             <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/general.css">
             <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/home.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,55 +24,61 @@
                     <h1 class="logo">HOPS</h1>
                 </div>
                 <div class="quick-access">
-                    <a href="${pageContext.request.contextPath}/pages/home.jsp">
+                    <a href="${pageContext.request.contextPath}/home">
                         <img src="${pageContext.request.contextPath}/public/icons/home-img.png"
                             class="representation-img" />
                     </a>
-                    <a href="${pageContext.request.contextPath}/pages/home.jsp">
-                        <p class="text-header">Home</p>
+                    <a href="${pageContext.request.contextPath}/home">
+                        <p class="text-header">
+                            <fmt:message key="general.home" />
+                        </p>
                     </a>
 
                     <div class="line"></div>
 
-                    <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
+                    <a href="${pageContext.request.contextPath}/catalog">
                         <img src="${pageContext.request.contextPath}/public/icons/car-img.png"
                             class="representation-img">
                     </a>
-                    <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
-                        <p class="text-header">Cars</p>
+                    <a href="${pageContext.request.contextPath}/catalog">
+                        <p class="text-header">
+                            <fmt:message key="general.cars" />
+                        </p>
                     </a>
 
                     <div class="line"></div>
 
-                    <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
+                    <a href="${pageContext.request.contextPath}/agencies">
                         <img src="${pageContext.request.contextPath}/public/icons/agencies-img.png"
                             class="representation-img">
                     </a>
-                    <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
-                        <p class="text-header">Agencies</p>
+                    <a href="${pageContext.request.contextPath}/agencies">
+                        <p class="text-header">
+                            <fmt:message key="general.agencies" />
+                        </p>
                     </a>
                 </div>
                 <c:choose>
                     <c:when test="${sessionScope.loggedIn == true}">
                         <div class="login-access">
-                            <a href="${pageContext.request.contextPath}/pages/login.jsp">
-                                <img src="${pageContext.request.contextPath}/public/icons/user-img.png"
-                                    class="representation-img" />
-                            </a>
-                            <a href="${pageContext.request.contextPath}/pages/login.jsp">
+                            <img src="${pageContext.request.contextPath}/public/icons/user-img.png"
+                                class="representation-img" />
+                            <a href="${pageContext.request.contextPath}/login">
                                 <p class="text-header">${sessionScope.userName}</p>
                             </a>
                         </div>
                     </c:when>
                     <c:otherwise>
-                        <a href="login.jsp">
+                        <a href="${pageContext.request.contextPath}/login">
                             <div class="login-access">
-                                <a href="${pageContext.request.contextPath}/pages/login.jsp">
+                                <a href="${pageContext.request.contextPath}/login">
                                     <img src="${pageContext.request.contextPath}/public/icons/user-img.png"
                                         class="representation-img" />
                                 </a>
-                                <a href="${pageContext.request.contextPath}/pages/login.jsp">
-                                    <p class="text-header">Login</p>
+                                <a href="${pageContext.request.contextPath}/login">
+                                    <p class="text-header">
+                                        <fmt:message key="general.login" />
+                                    </p>
                                 </a>
                             </div>
                         </a>
