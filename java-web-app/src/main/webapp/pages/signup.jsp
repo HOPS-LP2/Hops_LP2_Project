@@ -1,129 +1,156 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
-  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+  <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-    <!DOCTYPE html>
-    <html lang="en">
+      <!DOCTYPE html>
+      <html lang="en">
 
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Sign Up &VerticalLine; HOPS</title>
-      <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" />
-      <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/general.css">
-      <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/signup.css">
+      <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+          <fmt:message key="signup.title" /> &VerticalLine; HOPS
+        </title>
+        <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/general.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/signup.css">
 
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    </head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+      </head>
 
-    <body>
-      <header>
-        <div>
-          <h1 class="logo">HOPS</h1>
-        </div>
-        <div class="quick-access">
+      <body>
+        <header>
+          <div>
+            <h1 class="logo">HOPS</h1>
+          </div>
+          <div class="quick-access">
 
-          <a href="${pageContext.request.contextPath}/pages/home.jsp">
-            <img src="${pageContext.request.contextPath}/public/icons/home-img.png" class="representation-img" />
-          </a>
-          <a href="${pageContext.request.contextPath}/pages/home.jsp">
-            <p class="text-header">Home</p>
-          </a>
+            <a href="${pageContext.request.contextPath}/pages/home.jsp">
+              <img src="${pageContext.request.contextPath}/public/icons/home-img.png" class="representation-img" />
+            </a>
+            <a href="${pageContext.request.contextPath}/pages/home.jsp">
+              <p class="text-header">
+                <fmt:message key="general.home" />
+              </p>
+            </a>
 
-          <div class="line"></div>
+            <div class="line"></div>
 
-          <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
-            <img src="${pageContext.request.contextPath}/public/icons/car-img.png" class="representation-img">
-          </a>
-          <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
-            <p class="text-header">Cars</p>
-          </a>
+            <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
+              <img src="${pageContext.request.contextPath}/public/icons/car-img.png" class="representation-img">
+            </a>
+            <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
+              <p class="text-header">
+                <fmt:message key="general.cars" />
+              </p>
+            </a>
 
-          <div class="line"></div>
+            <div class="line"></div>
 
-          <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
-            <img src="${pageContext.request.contextPath}/public/icons/agencies-img.png" class="representation-img">
-          </a>
-          <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
-            <p class="text-header">Agencies</p>
-          </a>
-        </div>
+            <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
+              <img src="${pageContext.request.contextPath}/public/icons/agencies-img.png" class="representation-img">
+            </a>
+            <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
+              <p class="text-header">
+                <fmt:message key="general.agencies" />
+              </p>
+            </a>
+          </div>
 
-        <div class="login-access">
-          <a href="${pageContext.request.contextPath}/pages/login.jsp">
-            <img src="${pageContext.request.contextPath}/public/icons/user-img.png" class="representation-img" /></a>
-          <a href="${pageContext.request.contextPath}/pages/login.jsp">
-            <p class="text-header">Login</p>
-          </a>
-        </div>
+          <div class="login-access">
+            <a href="${pageContext.request.contextPath}/pages/login.jsp">
+              <img src="${pageContext.request.contextPath}/public/icons/user-img.png" class="representation-img" /></a>
+            <a href="${pageContext.request.contextPath}/pages/login.jsp">
+              <p class="text-header">
+                <fmt:message key="general.login" />
+              </p>
+            </a>
+          </div>
 
-      </header>
+        </header>
 
-      <main>
-        <div class="signup">
-          <h2>Sign Up</h2>
+        <main>
+          <div class="signup">
+            <h2>
+              <fmt:message key="signup.signup" />
+            </h2>
 
-          <form action="${pageContext.request.contextPath}/signup" method="post" id="signup-form">
-            <div class="input-field small">
-              <label for="first-name">First name:</label>
-              <input type="text" name="first-name" id="first-name"
-                value="${not empty param['first-name'] ? param['first-name'] : ''}">
-            </div>
-
-            <div class="input-field small">
-              <label for="last-name">Last name:</label>
-              <input type="text" name="last-name" id="last-name"
-                value="${not empty param['last-name'] ? param['last-name'] : ''}">
-            </div>
-
-            <div class="input-field large">
-              <label for="email">Email:</label>
-              <input type="text" name="email" id="email" value="${not empty param['email'] ? param['email'] : ''}">
-            </div>
-
-            <div class="input-field large">
-              <label for="ssn">Social Security Number (SSN):</label>
-              <input type="text" name="ssn" id="ssn" value="${not empty param['ssn'] ? param['ssn'] : ''}">
-            </div>
-
-            <div class="input-field large">
-              <label for="phone-number">Phone Number:</label>
-              <input type="tel" name="phone-number" id="phone-number"
-                value="${not empty param['phone-number'] ? param['phone-number'] : ''}" />
-            </div>
-
-            <div class="input-field small">
-              <label for="password">Create password:</label>
-              <input type="password" name="password" id="password">
-
-              <div class="password-req">
-                <p>Password must contain:<br>
-                  at least 8 characters; <br>
-                  at least one number; <br>
-                  at least one lowercase letter; <br>
-                  at least one uppercase letter;
-                </p>
+            <form action="${pageContext.request.contextPath}/signup" method="post" id="signup-form">
+              <div class="input-field small">
+                <label for="first-name">
+                  <fmt:message key="signup.first-name" />
+                </label>
+                <input type="text" name="first-name" id="first-name"
+                  value="${not empty param['first-name'] ? param['first-name'] : ''}">
               </div>
-            </div>
-            <div class="input-field small">
-              <label for="confirm-password">Confirm password:</label>
-              <input type="password" name="confirm-password" id="confirm-password">
-            </div>
 
-          </form>
-          <c:if test="${not empty sessionScope.message}">
-            <p id="warning">${sessionScope.message}</p>
-          </c:if>
-          <p id="warning"></p>
-          <button type="submit" class="large" form="signup-form">Confirm</button>
+              <div class="input-field small">
+                <label for="last-name">
+                  <fmt:message key="signup.last-name" />
+                </label>
+                <input type="text" name="last-name" id="last-name"
+                  value="${not empty param['last-name'] ? param['last-name'] : ''}">
+              </div>
 
-        </div>
+              <div class="input-field large">
+                <label for="email">
+                  <fmt:message key="signup.email" />
+                </label>
+                <input type="text" name="email" id="email" value="${not empty param['email'] ? param['email'] : ''}">
+              </div>
 
-      </main>
+              <div class="input-field large">
+                <label for="ssn">
+                  <fmt:message key="signup.SSN" />
+                </label>
+                <input type="text" name="ssn" id="ssn" value="${not empty param['ssn'] ? param['ssn'] : ''}">
+              </div>
 
-      <script src="${pageContext.request.contextPath}/scripts/signup.js"></script>
-    </body>
+              <div class="input-field large">
+                <label for="phone-number">
+                  <fmt:message key="signup.phone-number" />
+                </label>
+                <input type="tel" name="phone-number" id="phone-number"
+                  value="${not empty param['phone-number'] ? param['phone-number'] : ''}" />
+              </div>
 
-    </html>
+              <div class="input-field small">
+                <label for="password">
+                  <fmt:message key="signup.create-password" />
+                </label>
+                <input type="password" name="password" id="password">
+
+                <div class="password-req">
+                  <p>
+                    <fmt:message key="signup.password-requirements" />
+                  </p>
+                </div>
+              </div>
+              <div class="input-field small">
+                <label for="confirm-password">
+                  <fmt:message key="signup.confirm-password" />
+                </label>
+                <input type="password" name="confirm-password" id="confirm-password">
+              </div>
+
+            </form>
+            <c:if test="${not empty sessionScope.message}">
+              <p id="warning">${sessionScope.message}</p>
+            </c:if>
+            <p id="warning"></p>
+            <button type="submit" class="large" form="signup-form">
+              <fmt:message key="signup.confirm" />
+            </button>
+
+          </div>
+
+        </main>
+
+        <script src="${pageContext.request.contextPath}/scripts/signup.js"></script>
+      </body>
+
+      </html>
