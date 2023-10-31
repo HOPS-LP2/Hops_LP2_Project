@@ -41,11 +41,11 @@
 
             <div class="line"></div>
 
-            <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
+            <a href="${pageContext.request.contextPath}/catalog">
               <img src="${pageContext.request.contextPath}/resources/public/icons/car-img.png"
                 class="representation-img">
             </a>
-            <a href="${pageContext.request.contextPath}/pages/catalog.jsp">
+            <a href="${pageContext.request.contextPath}/catalog">
               <p class="text-header">
                 <fmt:message key="general.cars" />
               </p>
@@ -53,11 +53,11 @@
 
             <div class="line"></div>
 
-            <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
+            <a href="${pageContext.request.contextPath}/agencies">
               <img src="${pageContext.request.contextPath}/resources/public/icons/agencies-img.png"
                 class="representation-img">
             </a>
-            <a href="${pageContext.request.contextPath}/pages/agencies.jsp">
+            <a href="${pageContext.request.contextPath}/agencies">
               <p class="text-header">
                 <fmt:message key="general.agencies" />
               </p>
@@ -65,10 +65,10 @@
           </div>
 
           <div class="login-access">
-            <a href="${pageContext.request.contextPath}/pages/login.jsp">
+            <a href="${pageContext.request.contextPath}/login">
               <img src="${pageContext.request.contextPath}/resources/public/icons/user-img.png"
                 class="representation-img" /></a>
-            <a href="${pageContext.request.contextPath}/pages/login.jsp">
+            <a href="${pageContext.request.contextPath}/login">
               <p class="text-header">
                 <fmt:message key="general.login" />
               </p>

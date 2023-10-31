@@ -29,11 +29,11 @@
                         <h1 class="logo">HOPS</h1>
                     </div>
                     <div class="quick-access">
-                        <a href="${pageContext.request.contextPath}/home">
+                        <a href="${pageContext.request.contextPath}/">
                             <img src="${pageContext.request.contextPath}/resources/public/icons/home-img.png"
                                 class="representation-img" />
                         </a>
-                        <a href="${pageContext.request.contextPath}/home">
+                        <a href="${pageContext.request.contextPath}/">
                             <p class="text-header">
                                 <fmt:message key="general.home" />
                             </p>
