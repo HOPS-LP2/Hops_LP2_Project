@@ -12,7 +12,7 @@
         <title>
           <fmt:message key="signup.title" /> &VerticalLine; HOPS
         </title>
-        <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" />
+        <link rel="icon" href="${pageContext.request.contextPath}/resources/favicon.ico" />
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/general.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/signup.css">
 

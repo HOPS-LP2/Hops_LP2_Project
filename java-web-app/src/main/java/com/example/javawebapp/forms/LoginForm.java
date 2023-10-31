@@ -6,12 +6,12 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
 public class LoginForm {
-    @NotNull
+    @NotNull(message = "{email.notNull}")
     @NotBlank
     @Email
     private String email;
-    @NotNull
-    @NotEmpty
+    @NotNull(message = "{password.notNull}")
+    @NotEmpty(message = "{password.notEmpty}")
     private String password;
 
     public LoginForm(@NotNull @NotBlank @Email String email, @NotNull @NotEmpty String password) {

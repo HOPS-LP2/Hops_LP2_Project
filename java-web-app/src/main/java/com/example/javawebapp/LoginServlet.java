@@ -36,12 +36,6 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String acceptLanguage = req.getHeader("Accept-Language");
-        Locale userLocale = Locale.lookup(Locale.LanguageRange.parse(acceptLanguage),
-                Arrays.asList(Locale.getAvailableLocales()));
-
-        ResourceBundle bundle = ResourceBundle.getBundle("messages", userLocale);
-
         HttpSession session = req.getSession();
 
         String email = req.getParameter("email");
@@ -52,12 +46,10 @@ public class LoginServlet extends HttpServlet {
 
         if (!violations.isEmpty()) {
 
-            ConstraintViolation<LoginForm> firsViolation = violations.iterator().next();
+            ConstraintViolation<LoginForm> firstViolation = violations.iterator().next();
+            String errorMessage = firstViolation.getMessage();
 
-            String errorField = bundle.getString("violations." + firsViolation.getPropertyPath().toString());
-            String errorMessage = firsViolation.getMessage();
-
-            req.setAttribute("errorLogin", errorField + " " + errorMessage);
+            req.setAttribute("errorLogin", errorMessage);
             req.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(req, resp);
             return;
         }
@@ -92,7 +84,6 @@ public class LoginServlet extends HttpServlet {
                 } else {
                     req.setAttribute("errorLogin", "login.invalid");
                     req.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(req, resp);
-
                 }
             }
 
