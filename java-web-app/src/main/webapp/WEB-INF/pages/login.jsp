@@ -114,7 +114,9 @@
                             </a>
                             <c:choose>
                                 <c:when test="${errorLogin == 'login.invalid'}">
-                                    <fmt:message key='errorLogin' />
+                                    <p id="warning">
+                                        <fmt:message key='${errorLogin}' />
+                                    </p>
                                 </c:when>
                                 <c:otherwise>
                                     <p id="warning">${errorLogin}</p>

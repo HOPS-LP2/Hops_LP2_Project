@@ -5,6 +5,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Set;
 
 import javax.naming.Context;
@@ -33,7 +36,11 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession().setAttribute("passwordReset", null);
+        String acceptLanguage = req.getHeader("Accept-Language");
+        Locale userLocale = Locale.lookup(Locale.LanguageRange.parse(acceptLanguage),
+                Arrays.asList(Locale.getAvailableLocales()));
+
+        ResourceBundle bundle = ResourceBundle.getBundle("messages", userLocale);
 
         HttpSession session = req.getSession();
 
@@ -44,7 +51,13 @@ public class LoginServlet extends HttpServlet {
         Set<ConstraintViolation<LoginForm>> violations = ValidatorUtil.validateObject(loginForm);
 
         if (!violations.isEmpty()) {
-            req.setAttribute("errorLogin", violations.iterator().next());
+
+            ConstraintViolation<LoginForm> firsViolation = violations.iterator().next();
+
+            String errorField = bundle.getString("violations." + firsViolation.getPropertyPath().toString());
+            String errorMessage = firsViolation.getMessage();
+
+            req.setAttribute("errorLogin", errorField + " " + errorMessage);
             req.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(req, resp);
             return;
         }
@@ -78,9 +91,9 @@ public class LoginServlet extends HttpServlet {
                     resp.sendRedirect(req.getContextPath() + "/");
                 } else {
                     req.setAttribute("errorLogin", "login.invalid");
-                    req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
+                    req.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(req, resp);
+
                 }
-                return;
             }
 
             resultSet.close();
