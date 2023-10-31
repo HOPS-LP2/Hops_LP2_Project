@@ -68,7 +68,7 @@
                         <a href="${pageContext.request.contextPath}/pages/login.jsp">
                             <img src="${pageContext.request.contextPath}/resources/public/icons/user-img.png"
                                 class="representation-img" /></a>
-                        <a href="${pageContext.request.contextPath}/pages/login.jsp">
+                        <a href="${pageContext.request.contextPath}/login">
                             <p class="text-header">
                                 <fmt:message key="general.login" />
                             </p>
@@ -107,20 +107,17 @@
                                     alt="eye-icon" class="show-password">
 
                             </div>
-                            <a href="${pageContext.request.contextPath}/pages/recoverPassword.jsp">
+                            <a href="${pageContext.request.contextPath}/recoverPassword">
                                 <span>
                                     <fmt:message key="login.forgot" />
                                 </span>
                             </a>
-                            <c:if test="${not empty sessionScope.passwordReset}">
-                                <p id="right">${sessionScope.passwordReset}</p>
-                            </c:if>
-                            <c:if test="${not empty sessionScope.loginFailed}">
-                                <p id="warning">${sessionScope.loginFailed}</p>
+                            <c:if test="${errorLogin != null}">
+                                <p id="warning">${errorLogin}</p>
                             </c:if>
 
                             <div class="login-btns">
-                                <a href="${pageContext.request.contextPath}/pages/signup.jsp">
+                                <a href="${pageContext.request.contextPath}/signup">
                                     <button type="button" class="btn-signup">
                                         <fmt:message key="login.signup" />
                                     </button>

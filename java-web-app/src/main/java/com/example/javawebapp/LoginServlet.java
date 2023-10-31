@@ -5,11 +5,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Set;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+
+import com.example.javawebapp.forms.LoginForm;
+import com.example.javawebapp.validators.ValidatorUtil;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,6 +21,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.ConstraintViolation;
 
 @WebServlet(name = "login", value = "/login")
 public class LoginServlet extends HttpServlet {
@@ -35,17 +40,12 @@ public class LoginServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
-        boolean isEmailValid = Validation.isValidEmail(email);
-        boolean isPasswordValid = Validation.isPasswordValid(password);
+        LoginForm loginForm = new LoginForm(email, password);
+        Set<ConstraintViolation<LoginForm>> violations = ValidatorUtil.validateObject(loginForm);
 
-        if (!isEmailValid) {
-            session.setAttribute("loginFailed", "Invalid Email");
-            req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
-            return;
-        } else if (!isPasswordValid) {
-            session.setAttribute("loginFailed", "Invalid Password");
-            req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
-            return;
+        if (!violations.isEmpty()) {
+            req.setAttribute("errorLogin", violations.iterator().next());
+            req.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(req, resp);
         }
 
         Connection connection = null;
@@ -74,7 +74,7 @@ public class LoginServlet extends HttpServlet {
                     req.getSession().setAttribute("loggedIn", true);
                     String userName = resultSet.getString("primeiro_nome");
                     session.setAttribute("userName", userName);
-                    resp.sendRedirect(req.getContextPath() + "/pages/home.jsp");
+                    resp.sendRedirect(req.getContextPath() + "/");
                 } else {
                     session.setAttribute("loginFailed", "Incorrect password!");
                     req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
