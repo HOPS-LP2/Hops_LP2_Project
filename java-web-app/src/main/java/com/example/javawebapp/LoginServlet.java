@@ -46,6 +46,7 @@ public class LoginServlet extends HttpServlet {
         if (!violations.isEmpty()) {
             req.setAttribute("errorLogin", violations.iterator().next());
             req.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(req, resp);
+            return;
         }
 
         Connection connection = null;
@@ -76,13 +77,10 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("userName", userName);
                     resp.sendRedirect(req.getContextPath() + "/");
                 } else {
-                    session.setAttribute("loginFailed", "Incorrect password!");
+                    req.setAttribute("errorLogin", "login.invalid");
                     req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
                 }
                 return;
-            } else {
-                session.setAttribute("loginFailed", "This email is not associated to an existing account");
-                req.getRequestDispatcher("/pages/login.jsp").forward(req, resp);
             }
 
             resultSet.close();
@@ -105,6 +103,5 @@ public class LoginServlet extends HttpServlet {
                 e.printStackTrace();
             }
         }
-
     }
 }

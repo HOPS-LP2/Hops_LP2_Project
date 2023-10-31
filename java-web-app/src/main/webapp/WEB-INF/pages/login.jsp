@@ -112,9 +112,14 @@
                                     <fmt:message key="login.forgot" />
                                 </span>
                             </a>
-                            <c:if test="${errorLogin != null}">
-                                <p id="warning">${errorLogin}</p>
-                            </c:if>
+                            <c:choose>
+                                <c:when test="${errorLogin == 'login.invalid'}">
+                                    <fmt:message key='errorLogin' />
+                                </c:when>
+                                <c:otherwise>
+                                    <p id="warning">${errorLogin}</p>
+                                </c:otherwise>
+                            </c:choose>
 
                             <div class="login-btns">
                                 <a href="${pageContext.request.contextPath}/signup">
