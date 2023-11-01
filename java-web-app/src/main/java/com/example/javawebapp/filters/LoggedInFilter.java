@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter(value = { "/signup", "/resetPassword", "/recoverPassword" })
+@WebFilter(value = { "/login", "/signup", "/resetPassword", "/recoverPassword" })
 public class LoggedInFilter implements Filter {
 
     @Override
