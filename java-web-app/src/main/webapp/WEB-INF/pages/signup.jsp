@@ -108,10 +108,10 @@
               </div>
 
               <div class="input-field large">
-                <label for="ssn">
-                  <fmt:message key="signup.SSN" />
+                <label for="cpf">
+                  <fmt:message key="signup.CPF" />
                 </label>
-                <input type="text" name="ssn" id="ssn" value="${not empty param['ssn'] ? param['ssn'] : ''}">
+                <input type="text" name="cpf" id="cpf" value="${not empty param['cpf'] ? param['cpf'] : ''}">
               </div>
 
               <div class="input-field large">

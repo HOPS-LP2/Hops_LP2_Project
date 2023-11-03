@@ -13,4 +13,10 @@ public class ValidatorUtil {
         Validator validator = factory.getValidator();
         return validator.validate(object);
     }
+
+    public static <T> Set<ConstraintViolation<T>> validateObject(T object, Class<?>... groups) {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
+        return validator.validate(object, groups);
+    }
 }

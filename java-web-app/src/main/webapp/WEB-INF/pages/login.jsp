@@ -89,9 +89,9 @@
                                 <fmt:message key="login.login-title" />
                             </h1>
                             <div class="input-div">
-                                <input type="email" name="email" id="email"
-                                    placeholder="<fmt:message key='login.email' />"
-                                    value="${not empty param.email ? param.email : ''}" />
+                                <input type="text" name="credential" id="credential"
+                                    placeholder="<fmt:message key='login.credentials' />"
+                                    value="${not empty credential ? credential : ''}" />
                                 <img src="${pageContext.request.contextPath}/resources/public/icons/email-icon.png"
                                     alt="email-icon">
                             </div>

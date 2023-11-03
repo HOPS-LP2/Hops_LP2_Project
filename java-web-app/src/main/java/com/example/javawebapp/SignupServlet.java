@@ -36,7 +36,7 @@ public class SignupServlet extends HttpServlet {
         String firstName = req.getParameter("first-name");
         String lastName = req.getParameter("last-name");
         String email = req.getParameter("email");
-        String cpf = req.getParameter("ssn");
+        String cpf = req.getParameter("cpf");
         String phoneNumber = req.getParameter("phone-number");
         String password = req.getParameter("password");
 
@@ -66,7 +66,7 @@ public class SignupServlet extends HttpServlet {
 
         boolean isCPFValid = Validation.isValidCPF(cpf);
         if (!isCPFValid) {
-            session.setAttribute("message", "Invalid SSN");
+            session.setAttribute("message", "Invalid CPF");
             req.getRequestDispatcher("/pages/signup.jsp").forward(req, resp);
             return;
         }
@@ -127,7 +127,7 @@ public class SignupServlet extends HttpServlet {
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                req.getSession().setAttribute("message", "SSN already in use");
+                req.getSession().setAttribute("message", "CPF already in use");
                 resp.sendRedirect("/java-web-app-1.0/pages/signup.jsp");
                 return;
             }

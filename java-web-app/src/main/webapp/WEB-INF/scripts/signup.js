@@ -48,9 +48,9 @@ function validateCPF(strCPF) {
   return true;
 }
 
-const SSNInput = document.getElementById('ssn');
+const CPFInput = document.getElementById('cpf');
 
-SSNInput.addEventListener('input', function () {
+CPFInput.addEventListener('input', function () {
   var v = this.value;
 
   if (isNaN(v[v.length - 1])) {
@@ -102,9 +102,9 @@ form.addEventListener('submit', event => {
     return;
   }
 
-  SSNInput.value = SSNInput.value.replace(/[.-]/g, '');
+  CPFInput.value = CPFInput.value.replace(/[.-]/g, '');
 
-  if (!validateCPF(SSNInput.value)) {
+  if (!validateCPF(CPFInput.value)) {
     warning.innerText = 'Invalid Social Security Number!';
     event.preventDefault();
     return;
