@@ -123,6 +123,12 @@
                                 </c:otherwise>
                             </c:choose>
 
+                            <c:if test="${not empty param.signup}">
+                                <p id="right">
+                                    <fmt:message key="login.signupSuccessful" />
+                                </p>
+                            </c:if>
+
                             <div class="login-btns">
                                 <a href="${pageContext.request.contextPath}/signup">
                                     <button type="button" class="btn-signup">

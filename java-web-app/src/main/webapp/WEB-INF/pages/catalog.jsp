@@ -67,9 +67,9 @@
                             <div class="login-access">
                                 <img src="${pageContext.request.contextPath}/resources/public/icons/user-img.png"
                                     class="representation-img" />
-                                <a href="${pageContext.request.contextPath}/login">
-                                    <p class="text-header">${sessionScope.username}</p>
-                                </a>
+
+                                <p class="text-header">${sessionScope.username}</p>
+
                             </div>
                         </c:when>
                         <c:otherwise>

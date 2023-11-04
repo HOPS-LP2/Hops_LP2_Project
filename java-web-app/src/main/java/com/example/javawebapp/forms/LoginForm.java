@@ -12,6 +12,7 @@ import org.hibernate.validator.constraints.br.CPF;
 public class LoginForm {
     @NotNull(message = "{email.notNull}", groups = EmailValidationGroup.class)
     @NotBlank(message = "{email.notBlank}", groups = EmailValidationGroup.class)
+    @NotEmpty(message = "{email.notEmpty}", groups = EmailValidationGroup.class)
     @Email(message = "email.notEmail", groups = EmailValidationGroup.class)
     @Size(min = 5, max = 100, message = "{email.size}", groups = EmailValidationGroup.class)
     private String email;
@@ -21,6 +22,7 @@ public class LoginForm {
 
     @Size(min = 8, max = 100, message = "{password.size}")
     @NotNull(message = "{password.notNull}")
+    @NotBlank(message = "{password.notBlank}")
     @NotEmpty(message = "{password.notEmpty}")
     private String password;
 

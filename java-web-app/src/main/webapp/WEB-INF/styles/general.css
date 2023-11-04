@@ -92,3 +92,24 @@ a {
   color: rgb(222, 19, 19);
   text-align: center;
 }
+
+#right:empty,
+#wrong:empty {
+  margin: 0;
+}
+
+#right,
+#wrong {
+  text-align: center;
+  word-wrap: break-word;
+  margin: 3vh 4vh 0 4vh;
+  font-weight: 500;
+}
+
+#right {
+  color: limegreen;
+}
+
+#wrong {
+  color: firebrick;
+}

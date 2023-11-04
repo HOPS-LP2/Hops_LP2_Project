@@ -142,10 +142,16 @@
               </div>
 
             </form>
-            <c:if test="${not empty sessionScope.message}">
-              <p id="warning">${sessionScope.message}</p>
+            <c:if test="${not empty errorSignup}">
+              <p id="warning">${errorSignup}</p>
             </c:if>
-            <p id="warning"></p>
+
+            <c:if test="${not empty errorSignupFMT}">
+              <p id="warning">
+                <fmt:message key="${errorSignupFMT}" />
+              </p>
+            </c:if>
+
             <button type="submit" class="large" form="signup-form">
               <fmt:message key="signup.confirm" />
             </button>
@@ -154,7 +160,7 @@
 
         </main>
 
-        <script src="${pageContext.request.contextPath}/scripts/signup.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/scripts/signup.js"></script>
       </body>
 
       </html>
