@@ -83,17 +83,26 @@
                                 <fmt:message key="recoverPassword.forgot" />
                             </h1>
                             <div class="input-div">
-                                <input type="email" name="email" id="email"
+                                <input type="email" name="email" id="email" value="${email}"
                                     placeholder="<fmt:message key='recoverPassword.email' />" />
                                 <img src="${pageContext.request.contextPath}/resources/public/icons/email-icon.png"
                                     alt="email-icon">
                             </div>
 
-                            <c:if test="${not empty sessionScope.emailFound}">
-                                <p id="right">${sessionScope.emailFound}</p>
+                            <c:if test="${not empty successMessageFMT}">
+                                <p id="right">
+                                    <fmt:message key="${successMessageFMT}" />
+                                </p>
                             </c:if>
-                            <c:if test="${not empty sessionScope.emailNotFound}">
-                                <p id="wrong">${sessionScope.emailNotFound}</p>
+
+                            <c:if test="${not empty errorMessageFMT}">
+                                <p id="wrong">
+                                    <fmt:message key="${errorMessageFMT}" />
+                                </p>
+                            </c:if>
+
+                            <c:if test="${not empty errorMessage}">
+                                <p id="wrong">${errorMessage}</p>
                             </c:if>
 
                             <div class="recover-btn">
