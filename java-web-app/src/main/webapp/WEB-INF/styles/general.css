@@ -2,12 +2,12 @@
   --color: #a14198;
 }
 
-* {
-  font-family: 'Poppins', sans-serif;
-}
-
 main {
   margin-top: 7vh;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
 }
 
 body {

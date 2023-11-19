@@ -95,8 +95,8 @@
                 <main>
                     <section class="search">
                         <form>
-                            <div style="margin-bottom: 1vh;">
-                                <h3 style="font-weight: 500;">
+                            <div class="available">
+                                <h3>
                                     <fmt:message key="home.check-availability" />
                                 </h3>
                             </div>
@@ -108,19 +108,19 @@
                                     <input type="text" name="location" id="location" style="width: 15vw;"
                                         placeholder="<fmt:message key='home.enter-adress' />" />
                                 </div>
-                                <div style="margin-left: 2vw;">
+                                <div class="adjust-left">
                                     <label for="date">
                                         <fmt:message key="home.date" />
                                     </label>
                                     <input type="date" name="date" id="date" style="width: 6vw;" />
                                 </div>
-                                <div style=" margin-left: 2vw;">
+                                <div class="adjust-left">
                                     <label for="time">
                                         <fmt:message key="home.time" />
                                     </label>
                                     <input type="time" name="time" id="time" style="width: 6vw;" />
                                 </div>
-                                <div style="margin-left: 2vw;">
+                                <div class="adjust-left">
                                     <button type="submit" class="btn-search">Search <img
                                             src="${pageContext.request.contextPath}/resources/public/icons/btn-img.png"
                                             class="btn-img" /></button>
@@ -130,8 +130,8 @@
                     </section>
 
                     <section>
-                        <div>
-                            <h1 style="margin: 0 0 5vh 20vw;">
+                        <div class="slider-text">
+                            <h1>
                                 <fmt:message key="home.popular" />
                             </h1>
                         </div>
@@ -190,7 +190,7 @@
                                 </div>
                                 <h1>BMW X6</h1>
                             </div>
-                            <div style="margin-right: 2rem;">
+                            <div class="last-slide">
                                 <div class="slide"><img
                                         src="${pageContext.request.contextPath}/resources/public/cars/bmw.png" />
                                 </div>

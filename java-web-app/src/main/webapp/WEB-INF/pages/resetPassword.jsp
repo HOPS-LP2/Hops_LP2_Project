@@ -79,7 +79,7 @@
                 <main>
                     <form action="../reset" method="post" class="reset-color" id="reset-form">
                         <div class="reset">
-                            <h1 style="text-align: center; margin-top: 0">
+                            <h1>
                                 <fmt:message key="resetPassword.reset-password" />
                             </h1>
                             <div class="input-div">
@@ -94,7 +94,7 @@
                                     alt="eye-icon" class="show-password">
 
                             </div>
-                            <div class="input-div" style="margin-top: 2vh;">
+                            <div id="input-div">
 
                                 <img src="${pageContext.request.contextPath}/resources/public/icons/password-icon.png"
                                     alt="password-icon">

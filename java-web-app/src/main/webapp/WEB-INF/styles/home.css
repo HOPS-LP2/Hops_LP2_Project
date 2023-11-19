@@ -33,6 +33,14 @@ h1 {
     position: relative;
 }
 
+.available {
+    margin-bottom: 1vh;
+}
+
+.available>h3 {
+    font-weight: 500;
+}
+
 .div-special {
     position: absolute;
     bottom: 4vh;
@@ -45,6 +53,10 @@ h1 {
 .div-special div {
     display: flex;
     flex-direction: column;
+}
+
+.adjust-left {
+    margin-left: 2vw;
 }
 
 input {
@@ -77,6 +89,10 @@ input[type="time"] {
     margin-left: 1vh;
     height: 24px;
     width: 24px;
+}
+
+.slider-text {
+    margin: 0 0 5vh 20vw;
 }
 
 .touch-slider {
@@ -115,6 +131,10 @@ input[type="time"] {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+}
+
+.last-slide {
+    margin-right: 2rem;
 }
 
 img {

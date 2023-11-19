@@ -92,7 +92,7 @@
                 </header>
                 <main>
                     <header>
-                        <h1 style="font-size: 30px; margin: 0;">
+                        <h1>
                             <fmt:message key="catalog.vehicles" />
                         </h1>
                         <div class="search">

@@ -6,6 +6,11 @@ main>header {
     padding: 0 2vw;
 }
 
+header>h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
 .search {
     display: flex;
 }

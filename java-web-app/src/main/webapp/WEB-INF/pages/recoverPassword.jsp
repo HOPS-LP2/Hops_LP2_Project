@@ -79,7 +79,7 @@
                 <main>
                     <form action="${pageContext.request.contextPath}/recover" method="post" class="recover-color">
                         <div class="recover">
-                            <h1 style="text-align: center; margin-top: 0">
+                            <h1>
                                 <fmt:message key="recoverPassword.forgot" />
                             </h1>
                             <div class="input-div">
