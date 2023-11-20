@@ -8,6 +8,8 @@ CREATE TABLE estado (
     PRIMARY KEY (id)
 );
 
+INSERT INTO estado (nome) VALUES ('São Paulo');
+
 CREATE TABLE cidade (
 	id INT NOT NULL AUTO_INCREMENT, 
     id_estado INT NOT NULL,
@@ -16,14 +18,28 @@ CREATE TABLE cidade (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE agencia(
-	id INT NOT NULL AUTO_INCREMENT,
+INSERT INTO cidade (id_estado, nome) VALUES (1, 'São Paulo');
+
+CREATE TABLE agencia (
+    id INT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
     id_cidade INT NOT NULL,
     cep CHAR(8) NOT NULL,
     logradouro VARCHAR(255) NOT NULL,
+    numero_endereco INT NOT NULL,
+    location POINT,
     FOREIGN KEY (id_cidade) REFERENCES cidade(id),
     PRIMARY KEY (id)
 );
+
+INSERT INTO agencia (nome, id_cidade, cep, logradouro, numero_endereco, location)
+VALUES ('IFSP', 1, '12345678', 'Main Street', 123, ST_GeomFromText('POINT(-23.523597569736406 -46.62227612249197)', 4326));
+
+SELECT ST_DISTANCE_Sphere(
+    ST_GeomFromText('POINT(-23.514209674140623 -46.616479312141294)', 4326),
+    location
+) AS distance
+FROM agencia;
 
 CREATE TABLE marca(
 	id INT NOT NULL AUTO_INCREMENT,
@@ -51,9 +67,9 @@ CREATE TABLE carro(
 	id INT NOT NULL AUTO_INCREMENT,
     id_cor INT NOT NULL,
     id_modelo INT NOT NULL,
-    ano YEAR NOT NULL,
     placa VARCHAR(10) NOT NULL,
     id_agencia INT NOT NULL,
+    image_path VARCHAR(255),
     PRIMARY KEY (id),
     FOREIGN KEY (id_agencia) REFERENCES agencia(id),
     FOREIGN KEY (id_modelo) REFERENCES modelo(id),
