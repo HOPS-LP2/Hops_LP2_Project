@@ -8,7 +8,35 @@ CREATE TABLE estado (
     PRIMARY KEY (id)
 );
 
-INSERT INTO estado (nome) VALUES ('São Paulo');
+INSERT INTO estado (nome)
+VALUES
+('Acre'),
+('Alagoas'),
+('Amapá'),
+('Amazonas'),
+('Bahia'),
+('Ceará'),
+('Distrito Federal'),
+('Espírito Santo'),
+('Goiás'),
+('Maranhão'),
+('Mato Grosso'),
+('Mato Grosso do Sul'),
+('Minas Gerais'),
+('Pará'),
+('Paraíba'),
+('Paraná'),
+('Pernambuco'),
+('Piauí'),
+('Rio de Janeiro'),
+('Rio Grande do Norte'),
+('Rio Grande do Sul'),
+('Rondônia'),
+('Roraima'),
+('Santa Catarina'),
+('São Paulo'),
+('Sergipe'),
+('Tocantins');
 
 CREATE TABLE cidade (
 	id INT NOT NULL AUTO_INCREMENT, 
@@ -18,22 +46,59 @@ CREATE TABLE cidade (
     PRIMARY KEY (id)
 );
 
-INSERT INTO cidade (id_estado, nome) VALUES (1, 'São Paulo');
+INSERT INTO cidade (id_estado, nome)
+VALUES
+(1, 'Rio Branco'),
+(2, 'Maceió'),
+(3, 'Macapá'),
+(4, 'Manaus'),
+(5, 'Salvador'),
+(6, 'Fortaleza'),
+(7, 'Brasília'),
+(8, 'Vitória'),
+(9, 'Goiânia'),
+(10, 'São Luís'),
+(11, 'Cuiabá'),
+(12, 'Campo Grande'),
+(13, 'Belo Horizonte'),
+(14, 'Belém'),
+(15, 'João Pessoa'),
+(16, 'Curitiba'),
+(17, 'Recife'),
+(18, 'Teresina'),
+(19, 'Rio de Janeiro'),
+(20, 'Natal'),
+(21, 'Porto Alegre'),
+(22, 'Porto Velho'),
+(23, 'Boa Vista'),
+(24, 'Florianópolis'),
+(25, 'São Paulo'),
+(26, 'Aracaju'),
+(27, 'Palmas');
 
 CREATE TABLE agencia (
     id INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(255) NOT NULL,
     id_cidade INT NOT NULL,
     cep CHAR(8) NOT NULL,
-    logradouro VARCHAR(255) NOT NULL,
-    numero_endereco INT NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
     location POINT,
     FOREIGN KEY (id_cidade) REFERENCES cidade(id),
     PRIMARY KEY (id)
 );
 
-INSERT INTO agencia (nome, id_cidade, cep, logradouro, numero_endereco, location)
-VALUES ('IFSP', 1, '12345678', 'Main Street', 123, ST_GeomFromText('POINT(-23.523597569736406 -46.62227612249197)', 4326));
+INSERT INTO agencia (nome, id_cidade, cep, endereco, location)
+VALUES
+('Agência Tancredo Neves', 4, '69087055 ', 'Rua das Esmeraldas, 84', ST_GeomFromText('POINT(-3.0508852209390773 -59.93409440469008)', 4326)),
+('Agência Vila Laura', 5, '40270180 ', 'Rua Raul Leite, 133', ST_GeomFromText('POINT(-12.972078221715684 -38.486957451567065)', 4326)),
+('Agência Santa Teresa', 5, '40260215 ', 'Rua Baixão, 465', ST_GeomFromText('POINT(-12.971981161925973, -38.481105105786746)', 4326)),
+('Agência St. Coimbra', 9, '74530015 ', 'Av. Castelo Branco, 2065', ST_GeomFromText('POINT(-16.677539939148048 -49.28663829710026)', 4326)),
+('Agência Setor Negrão de Lima', 9, '74653230 ', 'Av. Ver. José Monteiro, 1655', ST_GeomFromText('POINT(-16.654722900305444 -49.24716696113827)', 4326)),
+('Agência St. Morada do Sol', 9, '74473806 ', 'Rua Aurora, QD 216', ST_GeomFromText('POINT(-16.61082927798199, -49.31910348250643)', 4326)),
+('Agência Marambaia', 14, '66620040 ', 'Rua Oriximina, 115', ST_GeomFromText('POINT(-1.3960279324202698 -48.46055325568506)', 4326)),
+('Agência Bela Vista', 25, '01323130 ', 'Rua Maestro Cardim, 1041', ST_GeomFromText('POINT(-23.569966359554698 -46.64193041893966)', 4326)),
+('Agência Morumbi', 25, '05724002 ', 'Av. Morumbi, 6340', ST_GeomFromText('POINT(-23.617248463115267 -46.70840007087052)', 4326)),
+('Agência Itaquera', 25, '08260030 ', 'Rua Agrimensor Sugaya, 986', ST_GeomFromText('POINT(-23.559519072232973 -46.43548365693204)', 4326));
 
 SELECT ST_DISTANCE_Sphere(
     ST_GeomFromText('POINT(-23.514209674140623 -46.616479312141294)', 4326),
@@ -47,11 +112,57 @@ CREATE TABLE marca(
 	PRIMARY KEY (id)
 );
 
+INSERT INTO marca (nome)
+VALUES
+('Ford'),
+('Chevrolet'),
+('Toyota'),
+('Honda'),
+('Volkswagen'),
+('BMW'),
+('Mercedes-Benz'),
+('Hyundai'),
+('Audi'),
+('Nissan'),
+('Fiat'),
+('Kia'),
+('Volvo'),
+('Subaru'),
+('Jeep'),
+('Tesla'),
+('Mazda'),
+('Peugeot'),
+('Jaguar'),
+('Land Rover');
+
 CREATE TABLE cor(
 	id INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(255) NOT NULL,
 	PRIMARY KEY (id)
 );
+
+INSERT INTO cor (nome)
+VALUES
+('Azul'),
+('Vermelho'),
+('Preto'),
+('Prata'),
+('Branco'),
+('Cinza'),
+('Amarelo'),
+('Verde'),
+('Azul Marinho'),
+('Vermelho Metálico'),
+('Dourado'),
+('Rosa'),
+('Roxo'),
+('Marrom'),
+('Laranja'),
+('Cinza Escuro'),
+('Prata Metálico'),
+('Verde Água'),
+('Azul Celeste'),
+('Violeta');
 
 CREATE TABLE modelo(
 	id INT NOT NULL AUTO_INCREMENT,
@@ -62,6 +173,29 @@ CREATE TABLE modelo(
 	PRIMARY KEY (id),
     FOREIGN KEY (id_marca) REFERENCES marca(id)
 );
+
+INSERT INTO modelo (nome, ano, preco, id_marca)
+VALUES
+('Fiesta', '2020', 50,000, 1),
+('Cruze', '2021', 80,000, 2),
+('Corolla', '2019', 75,000, 3),
+('Civic', '2022', 70,000, 4),
+('Golf', '2020', 60,000, 5),
+('Série 3', '2021', 120,000, 6),
+('Classe A', '2019', 100,000, 7),
+('Elantra', '2022', 65,000, 8),
+('A4', '2020', 110,000, 9),
+('Sentra', '2021', 55,000, 10),
+('Uno', '2019', 35,000, 11),
+('Sportage', '2022', 90,000, 12),
+('XC40', '2020', 95,000, 13),
+('Impreza', '2021', 55,000, 14),
+('Renegade', '2019', 75,000, 15),
+('Model 3', '2022', 120,000, 16),
+('Mazda3', '2020', 70,000, 17),
+('208', '2021', 50,000, 18),
+('F-PACE', '2019', 110,000, 19),
+('Range Rover Evoque', '2022', 95,000, 20);
 
 CREATE TABLE carro(
 	id INT NOT NULL AUTO_INCREMENT,
@@ -75,6 +209,57 @@ CREATE TABLE carro(
     FOREIGN KEY (id_modelo) REFERENCES modelo(id),
 	FOREIGN KEY (id_cor) REFERENCES cor(id)
 );
+
+INSERT INTO carro (id_cor, id_modelo, placa, id_agencia, image_path)
+VALUES
+('1', '1', 'ABC-1234', '8', 'carro1.jpg'),
+('2', '2', 'DEF-5678', '8', 'carro2.jpg'),
+('3', '3', 'GHI-9012', '8', 'carro3.jpg'),
+('4', '4', 'JKL-3456', '8', 'carro4.jpg'),
+('5', '5', 'MNO-7890', '8', 'carro5.jpg'),
+('6', '6', 'PQR-1234', '8', 'carro6.jpg'),
+('7', '7', 'STU-5678', '8', 'carro7.jpg'),
+('8', '8', 'VWX-9012', '8', 'carro8.jpg'),
+('9', '9', 'YZA-3456', '8', 'carro9.jpg'),
+('10', '10', 'BCD-7890', '8', 'carro10.jpg'),
+('11', '11', 'EFG-1234', '8', 'carro11.jpg'),
+('12', '12', 'HIJ-5678', '8', 'carro12.jpg'),
+('1', '1', 'ABC-1234', '9', 'carro1.jpg'),
+('2', '2', 'DEF-5678', '9', 'carro2.jpg'),
+('3', '3', 'GHI-9012', '9', 'carro3.jpg'),
+('4', '4', 'JKL-3456', '9', 'carro4.jpg'),
+('5', '5', 'MNO-7890', '9', 'carro5.jpg'),
+('6', '6', 'PQR-1234', '9', 'carro6.jpg'),
+('7', '7', 'STU-5678', '9', 'carro7.jpg'),
+('8', '8', 'VWX-9012', '9', 'carro8.jpg'),
+('9', '9', 'YZA-3456', '9', 'carro9.jpg'),
+('10', '10', 'BCD-7890', '9', 'carro10.jpg'),
+('11', '11', 'EFG-1234', '9', 'carro11.jpg'),
+('12', '12', 'HIJ-5678', '9', 'carro12.jpg'),
+('13', '13', 'KLM-9012', '9', 'carro13.jpg'),
+('14', '14', 'NOP-3456', '9', 'carro14.jpg'),
+('15', '15', 'QRS-7890', '9', 'carro15.jpg'),
+('16', '16', 'TUV-1234', '9', 'carro16.jpg'),
+('1', '1', 'ABC-1234', '10', 'carro1.jpg'),
+('2', '2', 'DEF-5678', '10', 'carro2.jpg'),
+('3', '3', 'GHI-9012', '10', 'carro3.jpg'),
+('4', '4', 'JKL-3456', '10', 'carro4.jpg'),
+('5', '5', 'MNO-7890', '10', 'carro5.jpg'),
+('6', '6', 'PQR-1234', '10', 'carro6.jpg'),
+('7', '7', 'STU-5678', '10', 'carro7.jpg'),
+('8', '8', 'VWX-9012', '10', 'carro8.jpg'),
+('9', '9', 'YZA-3456', '10', 'carro9.jpg'),
+('10', '10', 'BCD-7890', '10', 'carro10.jpg'),
+('11', '11', 'EFG-1234', '10', 'carro11.jpg'),
+('12', '12', 'HIJ-5678', '10', 'carro12.jpg'),
+('13', '13', 'KLM-9012', '10', 'carro13.jpg'),
+('14', '14', 'NOP-3456', '10', 'carro14.jpg'),
+('15', '15', 'QRS-7890', '10', 'carro15.jpg'),
+('16', '16', 'TUV-1234', '10', 'carro16.jpg'),
+('17', '17', 'WXY-5678', '10', 'carro17.jpg'),
+('18', '18', 'ZAB-9012', '10', 'carro18.jpg'),
+('19', '19', 'BCD-3456', '10', 'carro19.jpg'),
+('20', '20', 'EFG-7890', '10', 'carro20.jpg');
 
 CREATE TABLE usuario(
 	id INT NOT NULL AUTO_INCREMENT,
