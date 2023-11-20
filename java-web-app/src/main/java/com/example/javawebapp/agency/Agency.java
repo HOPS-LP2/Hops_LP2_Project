@@ -4,19 +4,35 @@ public class Agency {
     private Integer agencyId;
     private String name;
     private String city;
+    private String state;
     private String cep;
     private String address;
-    private Integer address_number;
     private String location;
+    private Double distance;
 
-    public Agency(Integer agencyId, String name, String city, String cep, String address, Integer address_number,
+    public Agency() {
+    };
+
+    public Agency(Integer agencyId, String name, String city, String state, String cep, String address, String location,
+            Double distance) {
+        this.agencyId = agencyId;
+        this.name = name;
+        this.city = city;
+        this.state = state;
+        this.cep = cep;
+        this.address = address;
+        this.location = location;
+        this.distance = distance;
+    }
+
+    public Agency(Integer agencyId, String name, String city, String state, String cep, String address,
             String location) {
         this.agencyId = agencyId;
         this.name = name;
         this.city = city;
+        this.state = state;
         this.cep = cep;
         this.address = address;
-        this.address_number = address_number;
         this.location = location;
     }
 
@@ -60,14 +76,6 @@ public class Agency {
         this.address = address;
     }
 
-    public Integer getAddress_number() {
-        return address_number;
-    }
-
-    public void setAddress_number(Integer address_number) {
-        this.address_number = address_number;
-    }
-
     public String getLocation() {
         return location;
     }
@@ -75,4 +83,21 @@ public class Agency {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
 }

@@ -200,7 +200,8 @@
                     </section>
                 </main>
 
-                <script src="${pageContext.request.contextPath}/scripts/home.js"></script>
+                <script src="${pageContext.request.contextPath}/resources/scripts/home.js"></script>
+                <script src="${pageContext.request.contextPath}/resources/scripts/getAgencies.js"></script>
             </body>
 
             </html>
