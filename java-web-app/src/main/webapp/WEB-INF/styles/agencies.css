@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(236, 235, 235);
+}
+
+main{
+    margin-top: 13vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.agency-info{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 0px 15px 1px rgba(0, 0, 0, 0.321);
+    width: 25rem;
+    height: 10rem;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    overflow: hidden;
+}
+
+.img-block{
+    display: grid;
+    place-items: center;
+}
+
+.img-block>img{
+    height: 64px;
+    aspect-ratio: 1/1;
+}
+
+.text{
+    grid-column: 2/4;
+    padding: 1rem;
+}
+
+h4{
+    margin: 0;
+}
+
+.text>small{
+    color: grey;
+}
+
+.horario{
+    grid-column: 1/4;
+    padding-left: 1.6rem;
+    color: grey;
+}
+
+@media (max-width: 1300px){
+    main{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 840px){
+    main{
+        grid-template-columns: 1fr;
+    }
+}
