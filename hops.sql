@@ -155,12 +155,14 @@ VALUES
 ('Vermelho Metálico'),
 ('Dourado'),
 ('Rosa'),
-('Azul Escuro'),
-('Azul Metálico'),
+('Roxo'),
+('Marrom'),
 ('Laranja'),
 ('Cinza Escuro'),
 ('Prata Metálico'),
-('Azul Celeste');
+('Cinza Claro'),
+('Azul Celeste'),
+('Branco Fosco');
 
 CREATE TABLE modelo(
 	id INT NOT NULL AUTO_INCREMENT,
@@ -255,9 +257,9 @@ VALUES
 ('15', '15', 'QRS-7890', '10', 'carro15.jpg'),
 ('16', '16', 'TUV-1234', '10', 'carro16.jpg'),
 ('17', '17', 'WXY-5678', '10', 'carro17.jpg'),
-('18', '5', 'ZAB-9012', '10', 'carro18.jpg'),
+('18', '18', 'ZAB-9012', '10', 'carro18.jpg'),
 ('19', '19', 'BCD-3456', '10', 'carro19.jpg'),
-('20', '5', 'EFG-7890', '10', 'carro20.jpg');
+('20', '20', 'EFG-7890', '10', 'carro20.jpg');
 
 CREATE TABLE usuario(
 	id INT NOT NULL AUTO_INCREMENT,
