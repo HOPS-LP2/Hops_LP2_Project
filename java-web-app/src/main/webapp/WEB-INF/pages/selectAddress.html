@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title></title>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <form>
+      <label for="pickupType">Pickup Type:</label>
+      <select id="pickupType" name="pickupType" class="form-control" onchange="updateFormContent()">
+        <option value="agency">Pick up at Agency</option>
+        <option value="delivery">Delivery</option>
+      </select>
+
+      <!-- Pickup Section -->
+      <div id="pickupContent" class="form-content">
+        <h3>Pickup Details</h3>
+        <label for="pickupDate">Pickup Date:</label>
+        <input type="date" id="pickupDate" name="pickupDate" class="form-control" required>
+
+        <label for="pickupTime">Pickup Time:</label>
+        <select id="pickupTime" name="pickupTime" class="form-control" required>
+          <!-- Populate pickup time options -->
+        </select>
+
+        <!-- Agency Name for pickup at agency -->
+        <div id="pickupAgencyNameField">
+          <label for="pickupAgencyName">Agency Name:</label>
+          <input type="text" id="pickupAgencyName" name="pickupAgencyName" class="form-control" required>
+        </div>
+
+        <!-- Address fields for delivery -->
+        <div id="pickupDeliveryAddressFields" style="display: none;">
+          <label for="pickupAddress">Address:</label>
+          <input type="text" id="pickupAddress" name="pickupAddress" class="form-control">
+
+          <label for="pickupNumber">Number:</label>
+          <input type="text" id="pickupNumber" name="pickupNumber" class="form-control">
+
+          <label for="pickupCEP">CEP:</label>
+          <input type="text" id="pickupCEP" name="pickupCEP" class="form-control">
+        </div>
+      </div>
+
+      <label for="returnType">Return Type:</label>
+      <select id="returnType" name="returnType" class="form-control">
+        <option value="agency">Return at Agency</option>
+        <option value="delivery">Return via Delivery</option>
+      </select>
+
+      <div id="returnContent" class="form-content">
+        <h3>Return Details</h3>
+        <label for="returnDate">Return Date:</label>
+        <input type="date" id="returnDate" name="returnDate" class="form-control" required>
+
+        <label for="returnTime">Return Time:</label>
+        <select id="returnTime" name="returnTime" class="form-control" required>
+          <!-- Populate return time options -->
+        </select>
+
+        <!-- Agency Name for return at agency -->
+        <div id="returnAgencyNameField">
+          <label for="returnAgencyName">Agency Name:</label>
+          <input type="text" id="returnAgencyName" name="returnAgencyName" class="form-control" required>
+        </div>
+
+        <!-- Address fields for return delivery -->
+        <div id="returnDeliveryAddressFields" style="display: none;">
+          <label for="returnAddress">Address:</label>
+          <input type="text" id="returnAddress" name="returnAddress" class="form-control">
+
+          <label for="returnNumber">Number:</label>
+          <input type="text" id="returnNumber" name="returnNumber" class="form-control">
+
+          <label for="returnCEP">CEP:</label>
+          <input type="text" id="returnCEP" name="returnCEP" class="form-control">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+  <script src="../scripts/selectAddress.js"></script>
+</body>
+
+</html>
