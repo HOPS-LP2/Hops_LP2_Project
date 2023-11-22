@@ -15,6 +15,7 @@
                     <fmt:message key="home.title" /> &VerticalLine; HOPS
                 </title>
 
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
                 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/general.css">
                 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/styles/home.css">
                 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,31 +101,13 @@
                                     <fmt:message key="home.check-availability" />
                                 </h3>
                             </div>
-                            <div class="div-special">
-                                <div>
-                                    <label for="location">
-                                        <fmt:message key="home.location" />
-                                    </label>
-                                    <input type="text" name="location" id="location" style="width: 15vw;"
-                                        placeholder="<fmt:message key='home.enter-adress' />" />
+                            <label for="location" id="label-location">Escolha uma agência:</label>
+                            <div class="search-items">
+                                <div style="position: relative;" class="search-input">
+                                    <input type="text" id="location" name="location" class="form-control" placeholder="<fmt:message key='home.enter-adress' />" autocomplete="off" />
+                                    <div id="agenciesList"></div>
                                 </div>
-                                <div class="adjust-left">
-                                    <label for="date">
-                                        <fmt:message key="home.date" />
-                                    </label>
-                                    <input type="date" name="date" id="date" style="width: 6vw;" />
-                                </div>
-                                <div class="adjust-left">
-                                    <label for="time">
-                                        <fmt:message key="home.time" />
-                                    </label>
-                                    <input type="time" name="time" id="time" style="width: 6vw;" />
-                                </div>
-                                <div class="adjust-left">
-                                    <button type="submit" class="btn-search">Search <img
-                                            src="${pageContext.request.contextPath}/resources/public/icons/btn-img.png"
-                                            class="btn-img" /></button>
-                                </div>
+                                <button type="submit" class="btn-search">Search<img src="${pageContext.request.contextPath}/resources/public/icons/btn-img.png" class="btn-img" /></button>
                             </div>
                         </form>
                     </section>
@@ -200,6 +183,8 @@
                     </section>
                 </main>
 
+                <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                 <script src="${pageContext.request.contextPath}/resources/scripts/home.js"></script>
                 <script src="${pageContext.request.contextPath}/resources/scripts/getAgencies.js"></script>
             </body>

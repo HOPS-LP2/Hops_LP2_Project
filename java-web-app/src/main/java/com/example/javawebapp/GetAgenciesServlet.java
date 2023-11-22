@@ -48,17 +48,12 @@ public class GetAgenciesServlet extends HttpServlet {
                     agencyJson.addProperty("location", agency.getLocation());
                     agencyJson.addProperty("distance", agency.getDistance());
 
-                    // Add other properties as needed
                     jsonArray.add(agencyJson);
                 }
 
-                // Set the response type to JSON
                 res.setContentType("application/json");
 
-                // Write the JSON array to the response
                 res.getWriter().write(jsonArray.toString());
-
-                // Return agencies as JSON
             } else {
                 res.sendError(0, "Couldn't find address");
             }

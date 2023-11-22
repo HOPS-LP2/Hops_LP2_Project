@@ -25,10 +25,10 @@ h1 {
     flex-direction: column;
     background-color: var(--color);
     margin: 10vh auto;
-    width: 45vw;
-    height: 24vh;
+    width: 55vw;
+    height: fit-content;
+    padding: 15px 0 15px;
     border-radius: 20px;
-    padding-left: 2vw;
     color: white;
     position: relative;
 }
@@ -38,7 +38,8 @@ h1 {
 }
 
 .available>h3 {
-    font-weight: 500;
+    font-weight: 400;
+    margin: 0 20px 0 20px;
 }
 
 .div-special {
@@ -55,10 +56,6 @@ h1 {
     flex-direction: column;
 }
 
-.adjust-left {
-    margin-left: 2vw;
-}
-
 input {
     border: 0;
     height: 5vh;
@@ -67,14 +64,9 @@ input {
     padding-left: 1vw;
 }
 
-input[type="date"],
-input[type="time"] {
-    padding: 0;
-    text-align: center;
-}
-
 .btn-search {
     background-color: #D99bd3;
+    color: black;
     font-size: 16px;
     border: none;
     padding: 8px 18px;
@@ -83,6 +75,7 @@ input[type="time"] {
     display: flex;
     align-items: center;
     cursor: pointer;
+    width: 20%;
 }
 
 .btn-img {
@@ -140,4 +133,55 @@ input[type="time"] {
 img {
     width: 100%;
     text-align: center;
+}
+
+#agenciesListContainer {
+    position: relative;
+}
+
+#agenciesList {
+    position: absolute;
+    color: black;
+    top: 35px;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #b8b8b8;
+    border: 5px;
+    background-color: white;
+    /* Set background color to opaque */
+    display: none;
+    width: 95%;
+    /* Hide by default */
+}
+
+.card-body {
+    border: 1px solid rgba(161, 161, 161, 0.64);
+    padding: 5px;
+    transition: all .1s;
+    cursor: pointer;
+}
+
+.card-body:hover {
+    background-color: #f1d2ee;
+}
+
+.search-items {
+    display: flex;
+    margin: 0 20px 20px 20px;
+}
+
+.search-input {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-control {
+    width: 95%;
+    height: 100%;
+}
+
+#label-location {
+    margin: 20px 0 5px 20px;
 }

@@ -91,62 +91,25 @@
                                 </h1>
                                 <div class="input-div">
                                     <input type="number" name="card-number" id="card-number"
-                                        placeholder="<fmt:message key='confirmRental.card-number' />"
-                                        value="${not empty card-number ? card-number : ''}" />
+                                        placeholder="<fmt:message key='confirmRental.card-number' />"/>
                                 </div>
                                 <div class="input-div">
                                     <input type="text" name="card-name" id="card-name"
-                                        placeholder="<fmt:message key='confirmRental.card-name' />"
-                                        value="${not empty card-name ? card-name : ''}" />
+                                        placeholder="<fmt:message key='confirmRental.card-name' />"/>
                                 </div>
                                 <div class="input-div">
                                     <input type="text" name="card-validity" id="card-validity"
-                                        placeholder="<fmt:message key='confirmRental.card-validity' />"
-                                        value="${not empty card-validity ? card-validity : ''}" />
+                                        placeholder="<fmt:message key='confirmRental.card-validity' />"/>
                                 </div>
                                 <div class="input-div">
                                     <input type="text" name="card-cvv" id="card-cvv"
-                                        placeholder="<fmt:message key='confirmRental.card-cvv' />"
-                                        value="${not empty card-cvv ? card-cvv : ''}" />
+                                        placeholder="<fmt:message key='confirmRental.card-cvv' />" />
                                 </div>
 
-                                <!-- <a href="${pageContext.request.contextPath}/recover">
-                                    <span>
-                                        <fmt:message key="login.forgot" />
-                                    </span>
-                                </a>
-                                <c:choose>
-                                    <c:when test="${errorLogin == 'login.invalid'}">
-                                        <p id="warning">
-                                            <fmt:message key='${errorLogin}' />
-                                        </p>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <p id="warning">${errorLogin}</p>
-                                    </c:otherwise>
-                                </c:choose>
-
-                                <c:if test="${not empty param.signup}">
-                                    <p id="right">
-                                        <fmt:message key="login.signupSuccessful" />
-                                    </p>
-                                </c:if>
-
-                                <div class="login-btns">
-                                    <a href="${pageContext.request.contextPath}/signup">
-                                        <button type="button" class="btn-signup">
-                                            <fmt:message key="login.signup" />
-                                        </button>
-                                    </a>
-                                    <button type="submit" class="btn-login">
-                                        <fmt:message key="login.login" />
-                                    </button>
-                                </div> -->
                             </div>
                         </form>
                     </div>
-                    </form>
-                </main>
+                </main> 
             </body>
 
             </html>

@@ -78,11 +78,10 @@ a {
 }
 
 .text-header {
-  margin-left: 1vw;
+  margin: 0 0 0 15px;
 }
 
 .representation-img {
-  margin-top: 1vh;
   height: 32px;
   width: 32px;
   z-index: 1000;
