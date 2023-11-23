@@ -84,7 +84,7 @@ public class GetAgenciesServlet extends HttpServlet {
     }
 
     private LocationInfo getLocationInfo(String location) {
-        String apiKey = "AIzaSyAIf8IWWOp6J5gOoLVmhsSJMtbt0VaGhhU";
+        String apiKey = "API_KEY";
         String autoCompleteApiUrl = "https://maps.googleapis.com/maps/api/place/autocomplete/json";
         String detailsApiUrl = "https://maps.googleapis.com/maps/api/place/details/json";
 
