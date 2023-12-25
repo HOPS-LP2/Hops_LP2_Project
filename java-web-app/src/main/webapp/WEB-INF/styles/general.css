@@ -1,114 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
 :root {
-  --color: #a14198;
+    --color: #a14198;
 }
 
-main {
-  margin-top: 7vh;
+header {
+    border-bottom: 5px solid var(--color);
+    box-shadow: rgba(0, 0, 0, 0.3) 10px 0 10px;
 }
 
 * {
-  font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-body {
-  margin: 0;
-  min-height: 100%;
-  min-width: 100%;
-  background-color: #F6F6F6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+h1 {
+    font-size: 26px;
 }
 
-body>header {
-  border-bottom: 5px solid var(--color);
-  position: fixed;
-  z-index: 1000;
-  background-color: white;
-  display: flex;
-  width: 100%;
-  height: 7vh;
-  align-items: center;
-  box-shadow: 1px 0px 15px 1px rgba(0, 0, 0, 0.321);
+.btn-outline-primary {
+    --bs-btn-color: var(--color);
+    --bs-btn-border-color: var(--color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--color);
+    --bs-btn-hover-border-color: var(--color);
+    --bs-btn-focus-shadow-rgb: 13, 110, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--color);
+    --bs-btn-active-border-color: var(--color);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--color);
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: var(--color);
+    --bs-gradient: none;
 }
 
-.quick-access {
-  display: flex;
-  align-items: center;
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--color);
+    --bs-btn-border-color: var(--color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--color);
+    --bs-btn-hover-border-color: var(--color);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--color);
+    --bs-btn-active-border-color: var(--color);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--color);
+    --bs-btn-disabled-border-color: var(--color);
 }
 
-.quick-access p {
-  font-size: 16px;
+.btn-primary:hover {
+    filter: brightness(90%);
 }
 
-.quick-access>a {
-  text-align: right;
-  margin: 0;
-  text-decoration-line: none;
-  cursor: pointer;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.login-access {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: absolute;
-  right: 3vw
-}
-
-.login-access p {
-  font-size: 18px;
-}
-
-.logo {
-  margin: 0 8vw 0 3vw;
-  font-size: 25px;
-}
-
-.line {
-  margin: 0 2vw 0 2vw;
-  width: 0.001px;
-  height: 3vh;
-  border: 1px solid grey;
-}
-
-.text-header {
-  margin: 0 0 0 15px;
-}
-
-.representation-img {
-  height: 32px;
-  width: 32px;
-  z-index: 1000;
-}
-
-#warning {
-  color: rgb(222, 19, 19);
-  text-align: center;
-}
-
-#right:empty,
-#wrong:empty {
-  margin: 0;
-}
-
-#right,
-#wrong {
-  text-align: center;
-  word-wrap: break-word;
-  margin: 3vh 4vh 0 4vh;
-  font-weight: 500;
-}
-
-#right {
-  color: limegreen;
-}
-
-#wrong {
-  color: firebrick;
-}

@@ -21,5 +21,4 @@ public class AgenciesServlet extends HttpServlet {
         req.setAttribute("list_agency", agencies);
         req.getRequestDispatcher("WEB-INF/pages/agencies.jsp").forward(req, res);
     }
-
 }

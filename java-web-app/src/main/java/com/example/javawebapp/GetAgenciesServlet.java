@@ -13,6 +13,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,13 +25,14 @@ import java.util.List;
 
 @WebServlet(name = "getAgencies", value = "/getAgencies")
 public class GetAgenciesServlet extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        
         String action = req.getParameter("action");
 
         if (action.equals("getByLocation")) {
             String userInputLocation = req.getParameter("inputLocation");
+            System.out.println(userInputLocation);
             LocationInfo locationInfo = getLocationInfo(userInputLocation);
 
             if (locationInfo != null) {
@@ -84,7 +86,7 @@ public class GetAgenciesServlet extends HttpServlet {
     }
 
     private LocationInfo getLocationInfo(String location) {
-        String apiKey = "API_KEY";
+        String apiKey = "AIzaSyBCIeAfn6o4Wg6bvpU5OlTOIS3tDfda6jQ";
         String autoCompleteApiUrl = "https://maps.googleapis.com/maps/api/place/autocomplete/json";
         String detailsApiUrl = "https://maps.googleapis.com/maps/api/place/details/json";
 
